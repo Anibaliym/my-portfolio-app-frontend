@@ -1,74 +1,43 @@
-
 # Portfolio
 
-## Descripción
+## Description
 
-Esta es mi aplicación de portafolio personal diseñada para mostrar mis proyectos, habilidades y experiencia en desarrollo de software a reclutadores internacionales. La aplicación proporciona una interfaz moderna y profesional para que los visitantes puedan explorar mis trabajos y conocer más sobre mi perfil.
+This is my personal portfolio application designed to showcase my projects, skills, and experience in software development. The application provides a modern and professional interface for visitors to explore my work and learn more about my professional profile.
 
-## Tecnologías Utilizadas
-
-### Backend
-- **.NET (C#)**: API desarrollada utilizando .NET Core 8.0 para servir datos dinámicos.
-- **PostgreSQL**: Base de datos relacional para almacenar proyectos, experiencias y otros datos importantes.
+## Technologies Used
 
 ### Frontend
-- **React (Vite)**: Aplicación frontend creada con React y empaquetada con Vite para un rendimiento óptimo.
-- **Yarn**: Gestor de paquetes utilizado para manejar dependencias.
-- **Tailwind CSS**: Estilización moderna y eficiente de la interfaz.
-- **Bootstrap**: Uso ocasional para componentes rápidos y responsivos.
-- **React Router**: Navegación dinámica para distintas secciones del portafolio.
+- **React (Vite)**: Frontend application created with React and bundled with Vite for optimal performance.
+- **Yarn**: Package manager used to handle dependencies.
+- **Bootstrap**: Occasionally used for quick and responsive components.
+- **React Router**: Dynamic navigation for different sections of the portfolio.
 
-## Características
-- 🌐 Diseño moderno y limpio.
-- 📁 Visualización de proyectos con descripciones detalladas.
-- 📋 Sección de habilidades y tecnologías utilizadas.
-- 📧 Formulario de contacto interactivo.
-- 💾 Backend que permite la carga dinámica de contenido.
+## Features
+- 🌐 Modern and clean design.
+- 📁 Project visualization with detailed descriptions.
+- 📋 Section for skills and technologies used.
 
-## Instalación
+## Installation
 
-### Clonar el repositorio
+### Clone the repository
 ```bash
- git clone https://github.com/Anibal-Portfolio/portfolio-app.git
+ git clone https://github.com/Anibaliym/my-repository-app-frontend.git
 ```
 
-### Backend (API .NET)
-1. Navegar a la carpeta `portfolio-app-backend`
-2. Restaurar paquetes NuGet:
-```bash
- dotnet restore
-```
-3. Ejecutar migraciones para configurar la base de datos:
-```bash
- dotnet ef database update
-```
-4. Ejecutar la aplicación:
-```bash
- dotnet run
-```
 
 ### Frontend (React)
-1. Navegar a la carpeta `portfolio-app-frontend`
-2. Instalar dependencias:
+1. Navigate to the `my-repository-app`
+2. Install dependencies:
 ```bash
  yarn install
 ```
-3. Ejecutar la aplicación:
+3. Run the application:
 ```bash
  yarn dev
 ```
+## Contributions
+Contributions are welcome! If you want to improve this application or add new features, feel free to open a Pull Request.
 
-## Despliegue
-(Próximamente se añadirá información sobre cómo desplegar la aplicación en un servicio gratuito).
+## Contact
+You can reach me through my GitHub or LinkedIn profile for any questions or proposals.
 
-## Uso
-Accede a la aplicación en `http://localhost:3000` para visualizar el portafolio y en `http://localhost:5000` para interactuar con la API.
-
-## Contribuciones
-Las contribuciones son bienvenidas. Si deseas mejorar esta aplicación o agregar nuevas características, no dudes en abrir un Pull Request.
-
-## Licencia
-Este proyecto se encuentra bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
-## Contacto
-Puedes contactarme a través de mi perfil de GitHub o LinkedIn para cualquier consulta o propuesta.
