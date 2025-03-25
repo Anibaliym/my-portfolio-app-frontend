@@ -1,13 +1,23 @@
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 :root {
     --body-color: #fff;
     --placeholder-color: #c0c0c0; 
     --sidebar-color: #F3F3F0;
-    --primary-color: #695CFE ; /* Purple */
+    --primary-color: #695CFE; /* Purple */
 
     --danger-color: red;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --text-forte-color: black; 
     --border-input-text-color: #bbbbbb;
     --background-input-text-color: white;
 
@@ -15,21 +25,17 @@
     --sub-menu-container: #F5F5F1; 
     --success-color: #2cb72c; 
 
-    --tran-03: all 0.2s ease;
-    --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
+    --tran-03: all 0.2s ease-out;
+    --tran-04: all 0.3s ease-out;
+    --tran-05: all 0.3s ease-out;
+
+    --background-gradient-light: linear-gradient(0deg, #ffffff 57%, #d1d1d1 100%);
 }
 
 body.dark {
     --placeholder-color: #8e8e8e; 
-    --body-color: #212121;
+    --body-color: #0c0c0c;
     --sidebar-color: #171717;
-    
-    --primary-color: #FF7F11; /* Naranja Vibrante - Un naranja fuerte y llamativo. */
-    --primary-color: #FF9F45; /* Naranja Suave - Un tono mÃ¡s cÃ¡lido y menos agresivo. */
-    --primary-color: #D97904; /* Naranja Dorado - Un naranja mÃ¡s elegante y cercano al dorado. */
-    --primary-color: #C75C1C; /* Naranja Quemado - Un tono mÃ¡s oscuro y sofisticado. */
-    --primary-color: #2ECC71; /* Verde Esmeralda */
     --primary-color: #695CFE; /* Purple */
 
     --danger-color: red;
@@ -37,7 +43,36 @@ body.dark {
     --primary-color-light: #3a3b3c;
     --toggle-color: #696969;
     --text-color: #ccc;
+    --text-forte-color: white; 
     --border-input-text-color: #686868;
     --background-input-text-color: #3e3e3e;
     --sub-menu-container: #303030; 
+
+    --background-gradient-dark: linear-gradient(169deg, #000000 48%, #4e4e4e 100%);
+
+}
+
+::selection {
+    background-color: var(--primary-color); /* Color de fondo de la selección */
+    color: white; /* Color del texto seleccionado */
+}
+
+.text-color-forte {
+    color: var(--text-forte-color);
+}
+
+.text-color-default {
+    color: var(--text-color);
+}
+
+.text-color-primary {
+    color: var(--primary-color);
+}
+
+.text-color-danger {
+    color: var(--primary-color);
+}
+
+.text-color-danger:hover {
+    color: red;
 }

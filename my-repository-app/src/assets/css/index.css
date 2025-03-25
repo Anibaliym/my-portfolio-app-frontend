@@ -1,40 +1,79 @@
 body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: #f5f5f5;
-    /* color: #695CFE;  */
-    color: black; 
+
+    background: var(--background-gradient-light);
 }
 
-/* Centrado del contenedor principal */
+body.dark {
+    background: var(--background-gradient-dark);
+}
+
 .principal-container {
     display: flex;
     height: 100vh; 
-    width: 90%; 
+    width: 1200px; 
     margin: auto;
     overflow: hidden;
+    position: relative;
 }
 
-/* Panel izquierdo */
 .left-panel {
-    width: 500px; 
-    background-color: #212121;
-    background-color: white;
+    width: 400px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
-    transition: all 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+.right-panel {
+    background-color: var(--body-color);
+    width: 800px; 
+    overflow-y: auto;
+}
+
+/* Scrollbar - inicio **************************************************************************************/
+
+.right-panel::-webkit-scrollbar {
+    width: 5px;
+}
+
+.right-panel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px;
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+    background: rgba(105, 92, 254, 0.8);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.right-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(105, 92, 254, 1);
+}
+
+body.light .right-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light .right-panel::-webkit-scrollbar-thumb {
+    background: rgba(105, 92, 254, 0.6);
+}
+
+/* Scrollbar - fin **************************************************************************************/
+
 
 /* MENÚ - inicio *************************************************************************/
 
 .menu {
     display: flex;
     justify-content: center;
+    margin-top: 100px; 
 }
 
 .menu ul {
@@ -46,12 +85,11 @@ body, html {
 
 .menu li {
     margin-bottom: 2px;
-    color: var(--primary-color); 
+    color: var(--text-color); 
     cursor: pointer;
-    text-align:center; 
-    padding: 2px; 
+    text-align:left; 
+    padding: 2px 0px 2px 10px; 
     border-radius: 3px; 
-    /* background-color: lightgray;  */
 }
 
 .menu li:hover {
@@ -60,7 +98,7 @@ body, html {
 }
 
 .menu li.active {
-    color: black;
+    color: var(--primary-color);
     font-weight: 400; 
 }
 
@@ -70,79 +108,170 @@ body, html {
 
 /* MENÚ - fin *************************************************************************/
 
-
 .title {
     font-weight: 200;
-    text-align: center; 
+    text-align: left; 
+    color: var(--text-forte-color); 
+    margin-top:100px; 
 }
 
-/* Links al final */
 .links {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* Panel derecho con scroll */
-.right-panel {
-    flex-grow: 1;
-    /* background-color: lightgray; */
-    /* padding: 10px; */
-    overflow-y: auto;
-    position: relative;
-}
-
-/* Título con efecto traslúcido */
 .sticky-title {
     position: sticky;
     top: 0;
     background: rgba(24, 24, 24, 0.1);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(10px);
-    /* background-color: gold; */
     border-bottom: 3px solid black; 
     padding: 30px 0;
     text-align: right; 
     z-index: 10;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablets (pantallas medianas) */
-@media (max-width: 1020px) {
-    .principal-container {
-        width: 90%;
-    }
-
-    .left-panel {
-        width: 350px;
-    }
-}
-
-/* Móviles (pantallas pequeñas) */
-@media (max-width: 760px) {
-    .principal-container {
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
-
-    .left-panel {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .right-panel {
-        width: 100%;
-        height: calc(100vh - 300px); /* Espacio restante después del menú */
-    }
-}
-
-
 .item-container {
     width: 100%; 
     height: 200px; 
     background-color: white; 
     margin-top: 10px; 
+}
+
+.toggle-switch {
+    display: flex;
+    cursor: pointer;
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    transition: all 0.1s;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-05);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+.about-container {
+    margin-top: 60px; 
+    padding: 60px; 
+}
+
+
+.experience-card {
+    padding: 30px; 
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; 
+    border-radius: 2px; 
+}
+
+.experience-card:hover {
+    background: rgba(105, 92, 254, 0.1);      
+}
+
+.experience-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.experience-description p {
+    margin: 30px 0;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* margin-top: 30px;  */
+}
+
+.tech-stack span {
+    background-color: rgba(0, 170, 255, 0.1);
+    color: var(--primary-color); 
+    padding: 5px 10px;
+    border-radius: 10px; 
+    font-size: 12px;
+    font-weight: bold; 
+    cursor: default; 
+}
+
+.tech-stack span:hover {
+    background-color: var(--primary-color);
+    color: white; 
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: var(--text-forte-color);
+    font-size: 35px;
+    transition: color 0.1s, transform 0.1s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.primary-button {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color); 
+    padding: 5px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    transition: color 0.3s ease, transform 0.2s ease; 
+}
+
+.primary-button:hover {
+    background-color: var(--primary-color); 
+    color: white;
+    border: 2px solid var(--primary-color); 
+    transform: scale(1.05);
+}
+
+.proyect-card {
+    padding: 30px; 
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; 
+    border-radius: 2px; 
+}
+
+.proyect-card:hover {
+    background: rgba(105, 92, 254, 0.1);
+}
+
+
+.description-section, .tools-section {
+    font-size: 15px;
 }

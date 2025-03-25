@@ -1,89 +1,68 @@
 import { useEffect, useState } from 'react';
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'animate.css';
-import '/src/assets/css/global.css';
-import '/src/assets/css/index.css';
-import '/src/assets/css/test.css';
+import { AboutPage } from './MyRepository/pages/AboutPage';
+import { ExperiencePage } from './MyRepository/pages/ExperiencePage';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { MenuBar } from './MyRepository/components/ui/MenuBar';
+import { ProyectsPage } from './MyRepository/pages/ProyectsPage';
 
 export const MyRepositoryApp = () => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const [activeMenuItem, setActiveMenuItem] = useState('About Me');
     
-    const [windowSize, setWindowSize] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-    });
-    const [activeMenuItem, setActiveMenuItem] = useState("About Me");
-
-    useEffect(() => {
-        const handleResize = () => setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-        
-        window.addEventListener('resize', handleResize);
-        handleResize();
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-
-    const handleMenuClick = (menuItem) => {
-        setActiveMenuItem(menuItem);
+    const toggleDarkMode = () => {
+        const newDarkModeState = !isDarkMode;
+        setIsDarkMode(newDarkModeState);
+        document.body.classList.toggle('dark', newDarkModeState);
+        localStorage.setItem('isDarkMode', JSON.stringify(newDarkModeState));
     };
+    
+    useEffect(() => {
+        document.body.classList.toggle('dark', false);
+        const savedDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
+    
+        if (savedDarkMode !== null) {
+            setIsDarkMode(savedDarkMode);
+            document.body.classList.toggle('dark', savedDarkMode);
+        }
+    }, []);
 
     return (
         <div className="principal-container">
+            <div className="toggle-switch" onClick={ toggleDarkMode }>
+                <span className="switch"></span>
+            </div>
+
             <div className="left-panel">
-                <div>
-                    {
-                        (windowSize.width > 1020) 
-                            ? (<h2 className="title display-2" >ANIBAL YAÑEZ</h2>) 
-                            : (<h2 className="title lead fs-1" >ANIBAL YAÑEZ</h2>)
-                    }
+                <div className="">
+                    <h5 className="title display-5">ANIBAL YAÑEZ</h5>
+                    <p className="lead text-color-default text-color-primary fw-normal">Fullstack Developer</p>
+                    <p className="text-color-default" style={{ fontSize:'14px' }}>Creo experiencias digitales innovadoras y eficientes con tecnologías .NET y Frontend modernas</p>
 
-                    <div className="menu" style={{ marginTop: `${ (windowSize.width > 760) ? '80px' : '20px' }` }}>
-                        <ul>
-                            {["About Me", "Experience", "Projects"].map((item) => (
-                                <li 
-                                    key={item}
-                                    className={`lead ${ activeMenuItem === item ? 'active' : '' } `}
-                                    onClick={() => handleMenuClick(item)}
-                                >
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <MenuBar activeMenuItem={ activeMenuItem } setActiveMenuItem={ setActiveMenuItem }/>
                 </div>
 
-                <i className="bx bxl-github" style={{ color: 'red' }}></i>
-                <i className="bx bxl-linkedin-square" ></i>
-
-                {/* Links a tus redes sociales */}
-                <div className="links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <div className="social-icons">
+                    <a href="https://www.linkedin.com/in/anibal-ya%C3%B1ez-moraga-568b67113/" target="_blank" rel="noopener noreferrer">
+                        {/* <i className='bx bxl-linkedin'></i> */}
+                        <i className='bx bxl-linkedin-square'></i>
+                    </a>
+                    <a href="https://github.com/Anibaliym" target="_blank" rel="noopener noreferrer">
+                        <i className='bx bxl-github'></i>
+                    </a>
                 </div>
             </div>
 
-            
             <div className="right-panel">
-                <div className="sticky-title">
-                    <h1 className="lead title">About Me</h1>
-                </div>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/about" />} />
+                    <Route path="about" element={<AboutPage />} />
+                    <Route path="experience" element={<ExperiencePage />} />
+                    <Route path="proyects" element={<ProyectsPage isDarkMode={ isDarkMode }/>} />
 
-                <div style={{ height: '2000px', padding: '20px' }}>
-
-                    <div className="item-container">
-                        about
-                    </div>
-                    <div className="item-container">
-                        experience
-                    </div>                    
-                    <div className="item-container">
-                        proyects
-                    </div>
-                </div>
+                    <Route path="/*" element={<AboutPage />} />
+                </Routes>
             </div>
-
         </div>
     );
-}
+};
