@@ -41,3 +41,6 @@ Contributions are welcome! If you want to improve this application or add new fe
 ## Contact
 You can reach me through my GitHub or LinkedIn profile for any questions or proposals.
 
+```bash
+ Linkedin https://www.linkedin.com/in/anibal-ya%C3%B1ez-moraga-568b67113/
+```
