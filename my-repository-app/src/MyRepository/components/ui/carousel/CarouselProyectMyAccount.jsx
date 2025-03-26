@@ -1,28 +1,27 @@
-import { ThemeContext } from '../../assets/context/ThemeProvider';
+import { ThemeContext } from '../../../../assets/context/ThemeProvider';
 
-import LoginPageLight from '../../assets/images/proyect-mi-account-lightmode/LoginPage.png';
-import ProfilePageLight from '../../assets/images/proyect-mi-account-lightmode/ProfilePage.png';
-import ProfilePageDeleteAccountLight from '../../assets/images/proyect-mi-account-lightmode/ProfilePageDeleteAccount.png';
-import RegisterPageLight from '../../assets/images/proyect-mi-account-lightmode/RegisterPage.png';
-import SessionExpiredLight from '../../assets/images/proyect-mi-account-lightmode/SessionExpired.png';
-import SheetPageLight from '../../assets/images/proyect-mi-account-lightmode/SheetPage.png';
-import HomePageLight from '../../assets/images/proyect-mi-account-lightmode/HomePage.png';
-import AccountsPageLight from '../../assets/images/proyect-mi-account-lightmode/AccountsPage.png';
-import DeleteUserAccountModalLight from '../../assets/images/proyect-mi-account-lightmode/DeleteUserAccountModal.png';
+import LoginPageLight from '../../../../assets/images/proyect-mi-account-lightmode/LoginPage.png';
+import ProfilePageLight from '../../../../assets/images/proyect-mi-account-lightmode/ProfilePage.png';
+import ProfilePageDeleteAccountLight from '../../../../assets/images/proyect-mi-account-lightmode/ProfilePageDeleteAccount.png';
+import RegisterPageLight from '../../../../assets/images/proyect-mi-account-lightmode/RegisterPage.png';
+import SessionExpiredLight from '../../../../assets/images/proyect-mi-account-lightmode/SessionExpired.png';
+import SheetPageLight from '../../../../assets/images/proyect-mi-account-lightmode/SheetPage.png';
+import HomePageLight from '../../../../assets/images/proyect-mi-account-lightmode/HomePage.png';
+import AccountsPageLight from '../../../../assets/images/proyect-mi-account-lightmode/AccountsPage.png';
+import DeleteUserAccountModalLight from '../../../../assets/images/proyect-mi-account-lightmode/DeleteUserAccountModal.png';
 
-import LoginPageDark from '../../assets/images/proyect-mi-account-darkmode/LoginPage.png';
-import ProfilePageDark from '../../assets/images/proyect-mi-account-darkmode/ProfilePage.png';
-import ProfilePageDeleteAccountDark from '../../assets/images/proyect-mi-account-darkmode/ProfilePageDeleteAccount.png';
-import RegisterPageDark from '../../assets/images/proyect-mi-account-darkmode/RegisterPage.png';
-import SessionExpiredDark from '../../assets/images/proyect-mi-account-darkmode/SessionExpired.png';
-import SheetPageDark from '../../assets/images/proyect-mi-account-darkmode/SheetPage.png';
-import HomePageDark from '../../assets/images/proyect-mi-account-darkmode/HomePage.png';
-import AccountsPageDark from '../../assets/images/proyect-mi-account-darkmode/AccountsPage.png';
-import DeleteUserAccountModalDark from '../../assets/images/proyect-mi-account-darkmode/DeleteUserAccountModal.png';
+import LoginPageDark from '../../../../assets/images/proyect-mi-account-darkmode/LoginPage.png';
+import ProfilePageDark from '../../../../assets/images/proyect-mi-account-darkmode/ProfilePage.png';
+import ProfilePageDeleteAccountDark from '../../../../assets/images/proyect-mi-account-darkmode/ProfilePageDeleteAccount.png';
+import RegisterPageDark from '../../../../assets/images/proyect-mi-account-darkmode/RegisterPage.png';
+import SessionExpiredDark from '../../../../assets/images/proyect-mi-account-darkmode/SessionExpired.png';
+import SheetPageDark from '../../../../assets/images/proyect-mi-account-darkmode/SheetPage.png';
+import HomePageDark from '../../../../assets/images/proyect-mi-account-darkmode/HomePage.png';
+import AccountsPageDark from '../../../../assets/images/proyect-mi-account-darkmode/AccountsPage.png';
+import DeleteUserAccountModalDark from '../../../../assets/images/proyect-mi-account-darkmode/DeleteUserAccountModal.png';
 import { useContext } from 'react';
 
-export const ProyectImageCarousel = () => {
-
+export const CarouselProyectMyAccount = () => {
     const {isDarkMode} = useContext(ThemeContext);
 
     const images = isDarkMode

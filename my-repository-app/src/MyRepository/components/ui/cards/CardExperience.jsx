@@ -1,5 +1,4 @@
-export const ExperienceCard = ({ startMonthDate, startYear, endMonth, endYear, company, position, positionDescription, technologies, experincesCount }) => {
-
+export const CardExperience = ({ startMonthDate, startYear, endMonth, endYear, company, position, positionDescription, technologies, experincesCount }) => {
     return (
         <div className="experience-card animate__animated animate__fadeInDown animate__faster">
             <div className="experience-row">
@@ -24,6 +23,6 @@ export const ExperienceCard = ({ startMonthDate, startYear, endMonth, endYear, c
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
     )
 }

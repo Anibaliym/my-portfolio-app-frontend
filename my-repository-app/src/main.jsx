@@ -9,9 +9,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'animate.css';
 
-import '/src/assets/css/global.css';
-import '/src/assets/css/index.css';
-import '/src/assets/css/responsive.css';
+import '/src/assets/css/Global.css';
+import '/src/assets/css/Index.css';
+import '/src/assets/css/Responsive.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

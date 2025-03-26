@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../assets/context/LanguageProvider';
-import { ProyectImageCarousel } from '../components/ProyectImageCarousel'; 
+import { CarouselProyectMyAccount } from '../components/ui/carousel/CarouselProyectMyAccount';
 
 export const ProyectsPage = () => {
 
@@ -87,7 +87,7 @@ export const ProyectsPage = () => {
                     </div>
                 </div>
 
-                <ProyectImageCarousel/>
+                <CarouselProyectMyAccount />
 
                 <p className="mt-3 text-color-default text-center">
                     {

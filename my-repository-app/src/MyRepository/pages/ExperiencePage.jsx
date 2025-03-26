@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '../../assets/context/LanguageProvider';
-
-import { ExperienceCard } from '../components/ExperienceCard'; 
 import { experienceData_en, experinceData_es } from '../../assets/data/experienceData';
+import { CardExperience } from '../components/ui/cards/CardExperience';
 
 export const ExperiencePage = () => {
     const {language} = useContext(LanguageContext);
@@ -18,7 +17,7 @@ export const ExperiencePage = () => {
                 arr
                 .sort((a, b) => b.id - a.id)  // Ordena de mayor a menor por 'id'
                 .map( ({ id, startMonthDate, startYear, endMonth, endYear, company, position, positionDescription, technologies }) => (
-                    <ExperienceCard
+                    <CardExperience
                         key={ id }
                         startMonthDate={ startMonthDate }
                         startYear={ startYear }
