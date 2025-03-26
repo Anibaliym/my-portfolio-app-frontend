@@ -1,3 +1,5 @@
+import { ThemeContext } from '../../assets/context/ThemeProvider';
+
 import LoginPageLight from '../../assets/images/proyect-mi-account-lightmode/LoginPage.png';
 import ProfilePageLight from '../../assets/images/proyect-mi-account-lightmode/ProfilePage.png';
 import ProfilePageDeleteAccountLight from '../../assets/images/proyect-mi-account-lightmode/ProfilePageDeleteAccount.png';
@@ -17,8 +19,11 @@ import SheetPageDark from '../../assets/images/proyect-mi-account-darkmode/Sheet
 import HomePageDark from '../../assets/images/proyect-mi-account-darkmode/HomePage.png';
 import AccountsPageDark from '../../assets/images/proyect-mi-account-darkmode/AccountsPage.png';
 import DeleteUserAccountModalDark from '../../assets/images/proyect-mi-account-darkmode/DeleteUserAccountModal.png';
+import { useContext } from 'react';
 
-export const ProyectImageCarousel = ({ isDarkMode = false }) => {
+export const ProyectImageCarousel = () => {
+
+    const {isDarkMode} = useContext(ThemeContext);
 
     const images = isDarkMode
         ? [

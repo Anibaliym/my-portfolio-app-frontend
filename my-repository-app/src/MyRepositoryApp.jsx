@@ -4,39 +4,19 @@ import { ExperiencePage } from './MyRepository/pages/ExperiencePage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MenuBar } from './MyRepository/components/ui/MenuBar';
 import { ProyectsPage } from './MyRepository/pages/ProyectsPage';
-import { LanguageToggle } from './MyRepository/components/ui/LanguageToggle';
 import { LanguageContext } from './assets/context/LanguageProvider';
+import { ThemeContext } from './assets/context/ThemeProvider';
+import { ToggleLanguage } from './MyRepository/components/ui/toggles/ToggleLanguage';
+import { ToggleTheme } from './MyRepository/components/ui/toggles/ToggleTheme';
 
 export const MyRepositoryApp = () => {
-    
-    const [isDarkMode, setIsDarkMode] = useState(false);
     const {language} = useContext(LanguageContext);
     const [activeMenuItem, setActiveMenuItem] = useState('About Me');
     
-    const toggleDarkMode = () => {
-        const newDarkModeState = !isDarkMode;
-        setIsDarkMode(newDarkModeState);
-        document.body.classList.toggle('dark', newDarkModeState);
-        localStorage.setItem('isDarkMode', JSON.stringify(newDarkModeState));
-    };
-    
-    useEffect(() => {
-        document.body.classList.toggle('dark', false);
-        const savedDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-    
-        if (savedDarkMode !== null) {
-            setIsDarkMode(savedDarkMode);
-            document.body.classList.toggle('dark', savedDarkMode);
-        }
-    }, []);
-
     return (
         <div className="principal-container">
-            <LanguageToggle/>
-
-            <div className="toggle-switch" onClick={ toggleDarkMode }>
-                <span className="switch"></span>
-            </div>
+            <ToggleLanguage />
+            <ToggleTheme />
 
             <div className="left-panel">
                 <div className="">
@@ -71,7 +51,7 @@ export const MyRepositoryApp = () => {
                     <Route path="/" element={<Navigate to="/about" />} />
                     <Route path="about" element={<AboutPage />} />
                     <Route path="experience" element={<ExperiencePage />} />
-                    <Route path="proyects" element={<ProyectsPage isDarkMode={ isDarkMode }/>} />
+                    <Route path="proyects" element={<ProyectsPage/>} />
 
                     <Route path="/*" element={<AboutPage />} />
                 </Routes>

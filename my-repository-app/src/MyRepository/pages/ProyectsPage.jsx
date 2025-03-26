@@ -2,8 +2,10 @@ import { useContext } from 'react';
 import { LanguageContext } from '../../assets/context/LanguageProvider';
 import { ProyectImageCarousel } from '../components/ProyectImageCarousel'; 
 
-export const ProyectsPage = ({ isDarkMode }) => {
+export const ProyectsPage = () => {
+
     const {language} = useContext(LanguageContext);
+    
     return (
         <div style={{ padding:'20px 50px 200px 50px' }}> 
             <div className="proyect-card animate__animated animate__fadeInDown animate__faster">
@@ -85,7 +87,7 @@ export const ProyectsPage = ({ isDarkMode }) => {
                     </div>
                 </div>
 
-                <ProyectImageCarousel isDarkMode={ isDarkMode }/>
+                <ProyectImageCarousel/>
 
                 <p className="mt-3 text-color-default text-center">
                     {

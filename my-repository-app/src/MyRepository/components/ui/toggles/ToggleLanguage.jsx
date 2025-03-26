@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { LanguageContext } from '../../../assets/context/LanguageProvider';
+import React, { useContext, useEffect } from 'react'
+import { LanguageContext } from '../../../../assets/context/LanguageProvider';
 
-export const LanguageToggle = () => {
+export const ToggleLanguage = () => {
     const { language, toggleLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
