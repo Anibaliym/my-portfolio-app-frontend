@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AboutPage } from './MyRepository/pages/AboutPage';
 import { ExperiencePage } from './MyRepository/pages/ExperiencePage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MenuBar } from './MyRepository/components/ui/MenuBar';
 import { ProyectsPage } from './MyRepository/pages/ProyectsPage';
+import { LanguageToggle } from './MyRepository/components/ui/LanguageToggle';
+import { LanguageContext } from './assets/context/LanguageProvider';
 
 export const MyRepositoryApp = () => {
+    
     const [isDarkMode, setIsDarkMode] = useState(false);
-
+    const {language} = useContext(LanguageContext);
     const [activeMenuItem, setActiveMenuItem] = useState('About Me');
     
     const toggleDarkMode = () => {
@@ -29,6 +32,8 @@ export const MyRepositoryApp = () => {
 
     return (
         <div className="principal-container">
+            <LanguageToggle/>
+
             <div className="toggle-switch" onClick={ toggleDarkMode }>
                 <span className="switch"></span>
             </div>
@@ -36,15 +41,23 @@ export const MyRepositoryApp = () => {
             <div className="left-panel">
                 <div className="">
                     <h5 className="title display-5">ANIBAL YAÑEZ</h5>
-                    <p className="lead text-color-default text-color-primary fw-normal">Fullstack Developer</p>
-                    <p className="text-color-default" style={{ fontSize:'14px' }}>Creo experiencias digitales innovadoras y eficientes con tecnologías .NET y Frontend modernas</p>
+                    <p className="lead text-color-default text-color-primary fw-normal">
+                        { (language === 'es') ? 'Desarrollador Fullstack' : 'Fullstack Developer'}
+                        
+                    </p>
+                    <p className="text-color-default" style={{ fontSize:'14px' }}>
+                        {
+                            (language === 'es')
+                            ? 'Creo experiencias digitales innovadoras y eficientes con tecnologías .NET y Frontend modernas.'
+                            : 'I create innovative and efficient digital experiences using modern .NET and Frontend technologies.'
+                        }
+                    </p>
 
                     <MenuBar activeMenuItem={ activeMenuItem } setActiveMenuItem={ setActiveMenuItem }/>
                 </div>
 
                 <div className="social-icons">
                     <a href="https://www.linkedin.com/in/anibal-ya%C3%B1ez-moraga-568b67113/" target="_blank" rel="noopener noreferrer">
-                        {/* <i className='bx bxl-linkedin'></i> */}
                         <i className='bx bxl-linkedin-square'></i>
                     </a>
                     <a href="https://github.com/Anibaliym" target="_blank" rel="noopener noreferrer">
