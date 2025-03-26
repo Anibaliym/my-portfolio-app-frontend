@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { LanguageContext } from '../../../../assets/context/LanguageProvider';
+import { LanguageContext } from '../../../assets/context/LanguageProvider';
 
 export const ToggleLanguage = () => {
     const { language, toggleLanguage } = useContext(LanguageContext);

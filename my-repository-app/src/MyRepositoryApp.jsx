@@ -5,9 +5,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { MenuBar } from './MyRepository/components/ui/MenuBar';
 import { ProyectsPage } from './MyRepository/pages/ProyectsPage';
 import { LanguageContext } from './assets/context/LanguageProvider';
-import { ThemeContext } from './assets/context/ThemeProvider';
-import { ToggleLanguage } from './MyRepository/components/ui/toggles/ToggleLanguage';
-import { ToggleTheme } from './MyRepository/components/ui/toggles/ToggleTheme';
+import { ToggleLanguage } from './MyRepository/components/toggles/ToggleLanguage';
+import { ToggleTheme } from './MyRepository/components/toggles/ToggleTheme';
 
 export const MyRepositoryApp = () => {
     const {language} = useContext(LanguageContext);

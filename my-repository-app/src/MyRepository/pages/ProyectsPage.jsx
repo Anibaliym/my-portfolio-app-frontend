@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../assets/context/LanguageProvider';
-import { CarouselProyectMyAccount } from '../components/ui/carousel/CarouselProyectMyAccount';
+import { CarouselProyectMyAccount } from '../components/carousel/CarouselProyectMyAccount';
 
 export const ProyectsPage = () => {
 
