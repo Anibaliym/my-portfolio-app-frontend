@@ -21,9 +21,8 @@ This is my personal portfolio application designed to showcase my projects, skil
 
 ### Clone the repository
 ```bash
- git clone https://github.com/Anibaliym/my-repository-app-frontend.git
+ git clone https://github.com/Anibaliym/my-portfolio-app-frontend
 ```
-
 
 ### Frontend (React)
 1. Navigate to the `my-repository-app`
