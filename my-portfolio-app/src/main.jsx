@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { MyRepositoryApp } from './MyRepositoryApp'
 import { BrowserRouter } from 'react-router-dom';
 import { LanguageProvider } from './assets/context/LanguageProvider';
 import { ThemeProvider } from './assets/context/ThemeProvider';
@@ -12,13 +11,14 @@ import 'animate.css';
 import '/src/assets/css/Global.css';
 import '/src/assets/css/Index.css';
 import '/src/assets/css/Responsive.css';
+import { MyPortfolioApp } from './MyPortfolioApp';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
     <ThemeProvider>
       <LanguageProvider>
-        <MyRepositoryApp />
+        <MyPortfolioApp />
       </LanguageProvider>
     </ThemeProvider>
     </BrowserRouter>

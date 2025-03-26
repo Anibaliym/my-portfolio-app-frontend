@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
-import { AboutPage } from './MyRepository/pages/AboutPage';
-import { ExperiencePage } from './MyRepository/pages/ExperiencePage';
+import { AboutPage } from './MyPortfolioApp/pages/AboutPage';
+import { ExperiencePage } from './MyPortfolioApp/pages/ExperiencePage';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { MenuBar } from './MyRepository/components/ui/MenuBar';
-import { ProyectsPage } from './MyRepository/pages/ProyectsPage';
+import { MenuBar } from './MyPortfolioApp/components/ui/MenuBar';
+import { ProyectsPage } from './MyPortfolioApp/pages/ProyectsPage';
 import { LanguageContext } from './assets/context/LanguageProvider';
-import { ToggleLanguage } from './MyRepository/components/toggles/ToggleLanguage';
-import { ToggleTheme } from './MyRepository/components/toggles/ToggleTheme';
+import { ToggleLanguage } from './MyPortfolioApp/components/toggles/ToggleLanguage';
+import { ToggleTheme } from './MyPortfolioApp/components/toggles/ToggleTheme';
 
-export const MyRepositoryApp = () => {
+export const MyPortfolioApp = () => {
     const {language} = useContext(LanguageContext);
     const [activeMenuItem, setActiveMenuItem] = useState('About Me');
     
