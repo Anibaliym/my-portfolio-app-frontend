@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { LanguageContext } from '../../assets/context/LanguageProvider';
 import { CarouselProyectMyAccount } from '../components/carousel/CarouselProyectMyAccount';
 
+const myAccountUrl = import.meta.env.VITE_URL_MY_ACCOUNT; 
+
 export const ProyectsPage = () => {
 
     const {language} = useContext(LanguageContext);
@@ -115,7 +117,7 @@ export const ProyectsPage = () => {
                     <div className="row mt-3">
                         <button 
                             className="primary-button"
-                            onClick={() => window.location.href = "http://localhost:5174/"}
+                            onClick={() => window.location.href = myAccountUrl}
                         >
                             {
                                 (language === 'es')
