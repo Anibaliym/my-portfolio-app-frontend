@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('es'); // 'es' para Español, 'en' para Inglés
+    const [language, setLanguage] = useState('en'); // 'es' para Español, 'en' para Inglés
 
     useEffect(() => {
         const savedLanguage = localStorage.getItem('language');
