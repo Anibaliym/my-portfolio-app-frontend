@@ -72,7 +72,7 @@ export const experinceData_es = [
         endYear             : '2023',
         company             : 'Universidad Adolfo Ibañez',
         position            : 'Desarrollador Fullstack .NET Senior',
-        positionDescription : 'Conformé parte del equipo de desarrollo y mantenimiento de sistemas de gestión académica (Omega) con .NET Framework, React y SQL Server. Diseñé e implementé lógica de negocio compleja basada en requerimientos personalizados del cliente, bajo metodologías ágiles (Scrum) y en cascada. Mejoré la experiencia de usuario creando interfaces modernas y eficientes que optimizaron el uso de los sistemas académicos.',
+        positionDescription : 'Conformé parte del equipo de desarrollo y mantenimiento de sistemas de gestión académica "Omega" con .NET Framework, React y SQL Server. Diseñé e implementé lógica de negocio compleja basada en requerimientos personalizados del cliente, bajo metodologías ágiles (Scrum) y en cascada. Mejoré la experiencia de usuario creando interfaces modernas y eficientes que optimizaron el uso de los sistemas académicos.',
         technologies        : [
             { id: 1, description: 'C#' },
             { id: 2, description: 'HTML/CSS' },
@@ -116,7 +116,7 @@ export const experinceData_es = [
         endYear             : '',
         company             : 'Kabeli - Banco ITAU',
         position            : 'Desarrollador Backend .NET Senior',
-        positionDescription : 'En mi rol como Desarrollador Backend .NET Senior, he diseñado y desarrollado microservicios escalables utilizando .NET Framework 4.8, optimizando significativamente el rendimiento del sistema y mejorando la eficiencia de despliegue mediante la implementación de pipelines CI/CD. Uso de herramientas avanzadas como Azure Repos para control de versiones y Jira para la gestión de tareas.',
+        positionDescription : 'En mi rol como Desarrollador Backend .NET Senior, he diseñado y desarrollado microservicios escalables utilizando .NET Framework 4.8, optimizando significativamente el rendimiento del sistema y mejorando la eficiencia de despliegue mediante la implementación de pipelines CI/CD. Uso de herramientas avanzadas como Azure Repos y Gitlab para control de versiones y Jira para la gestión de tareas.',
         technologies        : [
             { id: 1, description: 'C#' },
             { id: 2, description: 'T-SQL' },
@@ -204,7 +204,7 @@ export const experienceData_en = [
         endYear             : '2023',
         company             : 'Universidad Adolfo Ibanez',
         position            : 'Senior Fullstack .NET Developer',
-        positionDescription : 'I was part of a development and maintenance team for academic management systems (Omega) using .NET Framework, React, and SQL Server. I designed and implemented complex business logic based on customized client requirements under agile (Scrum) and waterfall methodologies. I enhanced user experience by creating modern and efficient interfaces that optimized the use of academic systems.',
+        positionDescription : 'I was part of a development and maintenance team for academic management systems "Omega" using .NET Framework, React, and SQL Server. I designed and implemented complex business logic based on customized client requirements under agile (Scrum) and waterfall methodologies. I enhanced user experience by creating modern and efficient interfaces that optimized the use of academic systems.',
         technologies        : [
             { id: 1, description: 'C#' },
             { id: 2, description: 'HTML/CSS' },

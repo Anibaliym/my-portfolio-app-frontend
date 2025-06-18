@@ -16,11 +16,11 @@ import { MyPortfolioApp } from './MyPortfolioApp';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <ThemeProvider>
-      <LanguageProvider>
-        <MyPortfolioApp />
-      </LanguageProvider>
-    </ThemeProvider>
+      <ThemeProvider>
+        <LanguageProvider>
+          <MyPortfolioApp />
+        </LanguageProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )

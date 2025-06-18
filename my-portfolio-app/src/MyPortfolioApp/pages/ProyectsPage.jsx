@@ -44,7 +44,7 @@ export const ProyectsPage = () => {
                                 : 'The application is developed using '
                         }
 
-                        <strong>React</strong> 
+                        <b><span className="text-color-primary"> React</span></b>
                         {
                             (language === 'es')
                                 ? ' para el frontend, proporcionando una interfaz moderna y dinámica, mientras que el backend está implementado con '
@@ -57,8 +57,8 @@ export const ProyectsPage = () => {
                                 : ' ensuring robust and scalable performance. The data is efficiently stored in a '
                         }
                         
-                        <strong> .NET Core 8</strong>, 
-                        <strong> PostgreSQL</strong>,
+
+                        <b><span className="text-color-primary"> .NET Core 8,  PostgreSQL, </span></b>
 
                         {
                             (language === 'es')
@@ -90,28 +90,6 @@ export const ProyectsPage = () => {
                 </div>
 
                 <CarouselProyectMyAccount />
-
-                <p className="mt-3 text-color-default text-center">
-                    {
-                        (language === 'es')
-                            ? '¿Quieres experimentar todo el potencial de '
-                            : 'Want to experience the full potential of  '
-                    }
-
-                    <strong>
-                        {
-                            (language === 'es')
-                                ? 'Mi Cuenta'
-                                : 'My Account'
-                        }
-                    </strong>
-
-                    {
-                        (language === 'es')
-                            ? '? Crea una cuenta y pruébalo ahora.'
-                            : '? Create an account and try it now!”'
-                    }
-                </p>
 
                 <div className="container">
                     <div className="row mt-3">
