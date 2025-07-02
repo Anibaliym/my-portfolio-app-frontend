@@ -10,7 +10,7 @@ export const AboutPage = () => {
             {language === 'es' ? (
                 <>
                     <p>
-                        Soy un desarrollador Fullstack Senior con más de 10 años de experiencia, especializado en el desarrollo de soluciones de 
+                        aaa Soy un desarrollador Fullstack Senior con más de 10 años de experiencia, especializado en el desarrollo de soluciones de 
                         software utilizando principalmente herramientas microsoft como el entorno 
                         <b><span className="text-color-primary"> .NET</span></b>, y lenguaje 
                         <b><span className="text-color-primary"> C#</span></b>.
