@@ -12,7 +12,7 @@ export const ExperiencePage = () => {
     }, [language])
     
     return (
-        <div style={{ padding:'20px 50px 200px 50px' }}> 
+        <div className="experience-container"> 
             {
                 arr
                 .sort((a, b) => b.id - a.id)  // Ordena de mayor a menor por 'id'

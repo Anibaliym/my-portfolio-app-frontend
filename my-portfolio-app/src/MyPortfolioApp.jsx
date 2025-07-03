@@ -24,7 +24,9 @@ export const MyPortfolioApp = () => {
                         { (language === 'es') ? 'Desarrollador Fullstack' : 'Fullstack Developer'}
                         
                     </p>
-                    <p className="text-color-default" style={{ fontSize:'14px' }}>
+
+                    
+                    <p className="text-color-default text-description">
                         {
                             (language === 'es')
                             ? 'Creo experiencias digitales innovadoras y eficientes con tecnologías .NET y Frontend modernas.'

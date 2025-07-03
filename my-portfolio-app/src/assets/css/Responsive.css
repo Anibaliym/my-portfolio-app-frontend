@@ -30,14 +30,15 @@
         width: 100%;
     }
 
+
     .right-panel {
         width: 100%;
-        height: calc(100vh - 300px); 
+        height: calc(100vh - 200px); 
         margin:auto;
     }
 
     .left-panel {
-        width: 300px;
+        width: 100%;
         height: auto;
         padding: 20px;
     }
@@ -54,10 +55,13 @@
     .menu ul {
         padding: 0;
         margin: 0;
+        display: flex;          
+        flex-direction: row;    
     }
 
     .menu li {
         padding: 0px 10px;
+        font-size: 15px;
     }
 
     .menu li:hover {
@@ -66,7 +70,52 @@
     } 
 
     .about-container {
-        margin-top: 20px; 
-        padding: 0px 60px 60px 60px; 
-    }    
+        margin-top: 0px; 
+        padding: 0px 20px; 
+        margin-bottom: 150px;
+    }
+
+    .experience-container {
+        margin-top: 0px; 
+        padding: 0px 10px; 
+        margin-bottom: 150px;
+    }
+
+    .proyects-container {
+        margin-top: 0px; 
+        padding: 0px 10px; 
+        margin-bottom: 150px;
+    }
+
+    .proyects-container {
+        margin-top: 0px; 
+        padding: 0px 10px; 
+        margin-bottom: 150px;
+
+    }
+
+    .experience-card {
+        padding: 10px; 
+        margin-top: 0px; 
+    }
+
+    .proyect-card {
+        padding: 10px; 
+    }
+
+    .social-icons {
+        margin-top: 0px;
+        flex-direction: row-reverse;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+
+    .text-description {
+        text-align: center;
+        color: white; 
+        padding: 0px 20px 0px 20px;
+    }
+    
 }

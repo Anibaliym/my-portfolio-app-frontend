@@ -46,8 +46,8 @@ export const AboutPage = () => {
                 <>
                     <p>
                         I am a Senior Fullstack Developer with over 10 years of experience, specialized in software solutions development
-                        primarily using <b><span class="text-color-primary">.NET</span></b> tools and the 
-                        <b><span class="text-color-primary"> C#</span></b> programming language.
+                        primarily using <b><span className="text-color-primary">.NET</span></b> tools and the 
+                        <b><span className="text-color-primary"> C#</span></b> programming language.
                     </p>
 
                     <p>
@@ -63,7 +63,7 @@ export const AboutPage = () => {
 
                     <p>
                         Additionally, I have a strong interest in <b>Front-End development</b> using tools like the 
-                        <b><span class="text-color-primary"> React</span></b> library, focusing on providing outstanding user experiences through the creation of modern, attractive, and easy-to-use interfaces that combine clean design with robust functionalities.
+                        <b><span className="text-color-primary"> React</span></b> library, focusing on providing outstanding user experiences through the creation of modern, attractive, and easy-to-use interfaces that combine clean design with robust functionalities.
                     </p>
 
                     <p>

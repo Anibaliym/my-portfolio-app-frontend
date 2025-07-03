@@ -9,7 +9,7 @@ export const ProyectsPage = () => {
     const {language} = useContext(LanguageContext);
     
     return (
-        <div style={{ padding:'20px 50px 200px 50px' }}> 
+        <div className="proyects-container"> 
             <div className="proyect-card animate__animated animate__fadeInDown animate__faster">
                 <h6 className="display-6 fs-1 text-color-primary mb-3">
                     { (language === 'es' ? 'MI CUENTA' : 'MY ACCOUNT') }
