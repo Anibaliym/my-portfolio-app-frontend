@@ -70,7 +70,7 @@
     } 
 
     .about-container {
-        margin-top: 0px; 
+        margin-top: 10px; 
         padding: 0px 20px; 
         margin-bottom: 150px;
     }
@@ -114,8 +114,6 @@
 
     .text-description {
         text-align: center;
-        color: white; 
         padding: 0px 20px 0px 20px;
-    }
-    
+    }    
 }
