@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Braces, Layers, Database, ArrowUpRight } from 'lucide-react';
 
-import resumeEs from '../../assets/docs/Anibal Yañez - Esp.docx?url';
-import resumeEn from '../../assets/docs/Anibal Yañez - Eng.docx?url';
+import resumeEs from '../../assets/docs/Anibal-Yanez-CV-ES.pdf?url';
+import resumeEn from '../../assets/docs/Anibal-Yanez-CV-EN.pdf?url';
 
 export const AboutPage = () => {
     const { t, i18n } = useTranslation();
@@ -34,7 +34,7 @@ export const AboutPage = () => {
             <div className="experience-highlight"><strong>10+</strong><span>{t('design.yearsExperience')}</span></div>
             <a className="resume-link" href={resumeUrl} target="_blank" rel="noopener noreferrer">
                 {t('design.resume')}<ArrowUpRight size={17} aria-hidden="true" />
-                <span className="resume-format">DOCX</span>
+                <span className="resume-format">PDF</span>
             </a>
         </section>
     );
