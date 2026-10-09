@@ -1,31 +1,26 @@
-import { useNavigate } from 'react-router-dom';
-import { LanguageContext } from '../../../assets/context/LanguageProvider';
-import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-export const MenuBar = ({ activeMenuItem, setActiveMenuItem }) => {
-    const navigate = useNavigate();
-    const {language} = useContext(LanguageContext);
+const items = [
+    { path: '/about', label: 'menu.about' },
+    { path: '/experience', label: 'menu.experience' },
+    { path: '/proyects', label: 'menu.projects' },
+];
 
-    const handleMenuClick = (menuItem, navigateTo) => {
-        setActiveMenuItem(menuItem);
-
-        if (navigateTo) 
-            navigate(navigateTo);
-    };
+export const MenuBar = () => {
+    const { t } = useTranslation();
 
     return (
-        <div className="menu">
+        <nav className="menu">
             <ul>
-                <li className={`lead ${activeMenuItem === 'About Me' ? 'active' : ''}`}     onClick={() => handleMenuClick('About Me', '/about')}>
-                    { (language === 'es') ? 'Acerca de mi' : 'About Me' }
-                </li>
-                <li className={`lead ${activeMenuItem === 'Experience' ? 'active' : ''}`}   onClick={() => handleMenuClick('Experience', '/experience')}>
-                    { (language === 'es') ? 'Experiencia' : 'Experience' }
-                </li>
-                <li className={`lead ${activeMenuItem === 'Projects' ? 'active' : ''}`}     onClick={() => handleMenuClick('Projects', '/proyects')}>
-                    { (language === 'es') ? 'Proyectos' : 'Projects' }
-                </li>
-            </ul>  
-        </div>        
-    )
-}
+                {items.map(({ path, label }) => (
+                    <li key={path}>
+                        <NavLink to={path}>
+                            <span className="menu-label">{t(label)}</span>
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+};

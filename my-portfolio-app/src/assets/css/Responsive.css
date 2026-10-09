@@ -1,119 +1,49 @@
-/* ===== RESPONSIVE DESIGN ===== */
-
-.principal-container, .left-panel, .right-panel, .menu li, .social-icons {
-    transition: var(--tran-05);
+@media (min-width: 901px) and (max-width: 1100px) {
+    .left-panel { padding: 28px 28px 20px; }
+    .about-container, .experience-container, .proyects-container { padding: 72px 28px 48px; }
+    .specialties { grid-template-columns: 1fr; }
+    .specialty { display: grid; grid-template-columns: 28px 1fr; column-gap: 12px; padding: 16px; }
+    .specialty-icon { grid-row: span 2; margin: 0; }
+    .specialty p { margin: 0; }
 }
-
-@media (max-width: 1350px) {
-    .principal-container {
-        width: 900px;
-    }
-
-    .right-panel {
-        width: 600px;
-    }
-
-    .left-panel {
-        width: 300px;
-        min-width: 250px;
-    }
-
-    .title {
-        font-size: 30px; 
-    }
-}
-
 @media (max-width: 900px) {
-    .principal-container {
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
+    .principal-container { display: block; }
+    .left-panel { position: static; height: auto; overflow: visible; border-right: 0; padding: 20px 24px 0; }
+    .appearance-controls { gap: 8px; flex-wrap: nowrap; max-width: 100%; }
+    .profile-intro { margin-top: 28px; }
+    .title { font-size: clamp(34px, 8vw, 46px); }
+    .text-description { max-width: 520px; font-size: 15px; margin-bottom: 24px; }
+    .profile-role { font-size: 17px; }
+    .menu { margin: 24px 0 12px; }
+    .menu ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .menu a { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; font-size: 13px; min-height: 44px; padding: 8px 0; }
+    .menu a:hover .menu-label { transform: none; }
+    .profile-footer { padding: 12px 0; border-top: 1px solid var(--line); }
+    .right-panel { border-top: 1px solid var(--line); }
+    .about-container, .experience-container, .proyects-container { padding: 36px 24px max(48px, env(safe-area-inset-bottom)); overflow-wrap: anywhere; }
+    .section-header { margin-bottom: 28px; }
+    .specialties { gap: 10px; }
+    .specialty { padding: 18px 12px; }
+    .project-heading h3 { font-size: 28px; }
+}
+@media (max-width: 480px) {
+    .project-heading { align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+    .project-features { gap: 12px; }
+    .project-feature h4 { font-size: 11px; }
+    .gallery-pagination button { width: 26px; }
+    .gallery-caption { gap: 8px; }
 
-
-    .right-panel {
-        width: 100%;
-        height: calc(100vh - 200px); 
-        margin:auto;
-    }
-
-    .left-panel {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .title {
-        font-size: 30px; 
-        margin-top:0px; 
-    }
-
-    .menu {
-        margin-top: 0px;
-    }
-
-    .menu ul {
-        padding: 0;
-        margin: 0;
-        display: flex;          
-        flex-direction: row;    
-    }
-
-    .menu li {
-        padding: 0px 10px;
-        font-size: 15px;
-    }
-
-    .menu li:hover {
-        background-color: var(--primary-color);
-        color: white;
-    } 
-
-    .about-container {
-        margin-top: 10px; 
-        padding: 0px 20px; 
-        margin-bottom: 150px;
-    }
-
-    .experience-container {
-        margin-top: 0px; 
-        padding: 0px 10px; 
-        margin-bottom: 150px;
-    }
-
-    .proyects-container {
-        margin-top: 0px; 
-        padding: 0px 10px; 
-        margin-bottom: 150px;
-    }
-
-    .proyects-container {
-        margin-top: 0px; 
-        padding: 0px 10px; 
-        margin-bottom: 150px;
-
-    }
-
-    .experience-card {
-        padding: 10px; 
-        margin-top: 0px; 
-    }
-
-    .proyect-card {
-        padding: 10px; 
-    }
-
-    .social-icons {
-        margin-top: 0px;
-        flex-direction: row-reverse;
-    }
-
-    .social-icons a {
-        font-size: 20px;
-    }
-
-    .text-description {
-        text-align: center;
-        padding: 0px 20px 0px 20px;
-    }    
+    .specialties { grid-template-columns: 1fr; }
+    .specialty { display: grid; grid-template-columns: 30px 1fr; column-gap: 14px; padding: 18px; }
+    .specialty-icon { grid-row: span 2; margin: 0; }
+    .specialty p { margin: 0; font-size: 13px; }
+}
+@media (max-width: 360px) {
+    .left-panel { padding-right: 18px; padding-left: 18px; }
+    .about-container, .experience-container, .proyects-container { padding-right: 18px; padding-left: 18px; }
+    .menu a { font-size: 12px; }
+    .primary-button { padding: 12px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

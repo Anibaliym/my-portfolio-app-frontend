@@ -19,75 +19,66 @@ import SheetPageDark from '../../../assets/images/proyect-mi-account-darkmode/Sh
 import HomePageDark from '../../../assets/images/proyect-mi-account-darkmode/HomePage.png';
 import AccountsPageDark from '../../../assets/images/proyect-mi-account-darkmode/AccountsPage.png';
 import DeleteUserAccountModalDark from '../../../assets/images/proyect-mi-account-darkmode/DeleteUserAccountModal.png';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const CarouselProyectMyAccount = () => {
+    const { t } = useTranslation();
+    const [activeIndex, setActiveIndex] = useState(2);
     const {isDarkMode} = useContext(ThemeContext);
 
     const images = isDarkMode
         ? [
-            { src: LoginPageDark, desc: 'Acceso' },
-            { src: RegisterPageDark, desc: 'Registro' },
-            { src: HomePageDark, desc: 'Inicio de la aplicación' },
-            { src: ProfilePageDark, desc: 'Perfil de usuario' },
-            { src: AccountsPageDark, desc: 'Cuentas' },
-            { src: SheetPageDark, desc: 'Hojas de cálculo' },
-            { src: SessionExpiredDark, desc: 'Sesión expirada' },
-            { src: DeleteUserAccountModalDark, desc: 'Eliminación de usuario' },
-            { src: ProfilePageDeleteAccountDark, desc: 'Usuario eliminado' }
+            { src: LoginPageDark },
+            { src: RegisterPageDark },
+            { src: HomePageDark },
+            { src: ProfilePageDark },
+            { src: AccountsPageDark },
+            { src: SheetPageDark },
+            { src: SessionExpiredDark },
+            { src: DeleteUserAccountModalDark },
+            { src: ProfilePageDeleteAccountDark }
         ]
         : [
-            { src: LoginPageLight, desc: 'Acceso' },
-            { src: RegisterPageLight, desc: 'Registro' },
-            { src: HomePageLight, desc: 'Inicio de la aplicación' },
-            { src: ProfilePageLight, desc: 'Perfil de usuario' },
-            { src: AccountsPageLight, desc: 'Cuentas' },
-            { src: SheetPageLight, desc: 'Hojas de cálculo' },
-            { src: SessionExpiredLight, desc: 'Sesión expirada' },
-            { src: DeleteUserAccountModalLight, desc: 'Eliminación de usuario' },
-            { src: ProfilePageDeleteAccountLight, desc: 'Usuario eliminado' }
+            { src: LoginPageLight },
+            { src: RegisterPageLight },
+            { src: HomePageLight },
+            { src: ProfilePageLight },
+            { src: AccountsPageLight },
+            { src: SheetPageLight },
+            { src: SessionExpiredLight },
+            { src: DeleteUserAccountModalLight },
+            { src: ProfilePageDeleteAccountLight }
         ];
 
+    const selectSlide = (offset) => setActiveIndex(current => (current + offset + images.length) % images.length);
+
     return (
-        <div 
-            id="carouselExampleAutoplaying" 
-            className="carousel slide rounded-3 shadow" 
-            data-bs-ride="carousel" 
-            style={{ boxShadow: '0px 0px 5px var(--primary-color)', transition: '0.4s' }}
-        >
-            <div className="carousel-inner rounded-3">
+        <div className="project-gallery" role="region" aria-label={t('projects.gallery')}>
+            <div className="gallery-frame">
+                <div className="gallery-browser" aria-hidden="true">
+                    <span></span><span></span><span></span><small>Mi Cuenta</small>
+                </div>
+                <img src={images[activeIndex].src} alt={t(`carousel.slides.${activeIndex}`)} className="gallery-image" />
+            </div>
+            <div className="gallery-toolbar">
+                <div className="gallery-caption" aria-live="polite">
+                    <span>{String(activeIndex + 1).padStart(2, '0')} / {images.length}</span>
+                    <strong>{t(`carousel.slides.${activeIndex}`)}</strong>
+                </div>
+                <div className="gallery-controls">
+                    <button type="button" onClick={() => selectSlide(-1)} aria-label={t('carousel.previous')}><ChevronLeft size={18} /></button>
+                    <button type="button" onClick={() => selectSlide(1)} aria-label={t('carousel.next')}><ChevronRight size={18} /></button>
+                </div>
+            </div>
+            <div className="gallery-pagination">
                 {images.map((image, index) => (
-                    <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <img src={image.src} className="d-block w-100 rounded-3" alt={image.desc} />
-                        
-                        {/* Descripción en la esquina inferior derecha */}
-                        <div 
-                            className="carousel-caption d-none d-md-block"
-                            style={{
-                                position: 'absolute',
-                                bottom: '10px',
-                                right: '10px',
-                                backgroundColor: 'rgba(0, 0, 0, 0.3)', // Fondo oscuro semitransparente
-                                borderRadius: '5px',
-                                padding: '5px 10px',
-                                color: 'white'
-                            }}
-                        >
-                            <h6 style={{ margin: 0, fontSize: '0.9rem' }}>{image.desc}</h6>
-                        </div>
-                    </div>
+                    <button key={index} type="button" aria-label={t(`carousel.slides.${index}`)}
+                        aria-pressed={activeIndex === index} onClick={() => setActiveIndex(index)}
+                        title={t(`carousel.slides.${index}`)}><span /></button>
                 ))}
             </div>
-            
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
         </div>
     );
 };

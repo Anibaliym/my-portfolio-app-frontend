@@ -1,0 +1,138 @@
+{
+  "profile": {
+    "role": "Fullstack Developer",
+    "description": "I create innovative and efficient digital experiences using modern .NET and Frontend technologies."
+  },
+  "menu": {
+    "about": "About Me",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+  "language": {
+    "switch": "Switch to Spanish",
+    "label": "Language",
+    "es": "Spanish",
+    "en": "English"
+  },
+  "about": {
+    "paragraph1": "I am a Senior Fullstack Developer with over 10 years of experience, specialized in software solutions development primarily using <highlight>.NET</highlight> tools and the <highlight>C#</highlight> programming language.",
+    "paragraph2": "My professional journey includes designing, developing, and implementing scalable, high-quality microservices, applying advanced architectures such as <b>Domain-Driven Design (DDD)</b> and clean code principles.",
+    "paragraph3": "My main strength lies within the <b>.NET</b> ecosystem, where I have extensively worked on developing robust APIs, enterprise applications, and client-oriented systems, optimizing the performance of <b> SQL</b>, <b>PostgreSQL</b>, <b>MySQL</b>, and <b>Oracle</b> databases.",
+    "paragraph4": "Additionally, I have a strong interest in <b>Front-End development</b> using tools like the <highlight>React</highlight> library, focusing on providing outstanding user experiences through the creation of modern, attractive, and easy-to-use interfaces that combine clean design with robust functionalities.",
+    "paragraph5": "I have collaborated in agile teams under <b>Scrum</b> methodologies, managing tasks with tools like <b>Jira</b> and using version control systems such as <b>Azure Repos</b> and platforms based on <b>Git</b>.",
+    "paragraph6": "I am passionate about learning new technologies and applying this knowledge to create innovative solutions that meet high standards of quality and usability."
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "carousel": {
+    "previous": "Previous",
+    "next": "Next",
+    "slides": [
+      "Login",
+      "Registration",
+      "Application home",
+      "User profile",
+      "Accounts",
+      "Spreadsheets",
+      "Session expired",
+      "User deletion",
+      "User deleted"
+    ]
+  },
+  "projects": {
+    "title": "MY ACCOUNT",
+    "functionalTitle": "Functional Description:",
+    "functionalDescription": "My Account App is an intuitive platform designed to simplify the management and supervision of personal finances in a clear and efficient way. It provides detailed control of income, expenses, and monthly and annual balances, allowing users to keep precise track of their financial situation. The application offers a dynamic dashboard with interactive charts and customization options tailored to each user’s specific needs.",
+    "technicalTitle": "Technical Description:",
+    "technicalDescription": "The application is developed using <highlight>React</highlight> for the frontend, providing a modern and dynamic interface, while the backend is implemented with <highlight>.NET Core 8</highlight>, ensuring robust and scalable performance. Data is efficiently stored in a <highlight>PostgreSQL</highlight> database, guaranteeing secure, reliable management and readiness for scaling at any time.",
+    "toolsTitle": "Tools and Languages Used:",
+    "explore": "Start Exploring My Account",
+    "gallery": "Mi Cuenta screenshots",
+    "category": "Personal finance · Web application",
+    "demo": "Live demo",
+    "stack": "Tech stack",
+    "overview": "What the application does",
+    "architecture": "How it is built",
+    "features": {
+      "tracking": "Income & expenses",
+      "balances": "Balances & charts",
+      "customization": "Customizable dashboard"
+    }
+  },
+  "experience": {
+    "entries": {
+      "1": {
+        "startMonthDate": "",
+        "endMonth": "",
+        "position": "Backend .NET Developer",
+        "positionDescription": "I was part of a support and development team for an application related to the \"Factoring and Confirming\" business, gathering requirements and adapting solutions to meet specific client needs in Bogotá, Colombia. My work stood out for efficiently implementing integrations that optimized the bank's internal processes."
+      },
+      "2": {
+        "startMonthDate": "August",
+        "endMonth": "December",
+        "position": "Backend .NET Developer",
+        "positionDescription": "I implemented integrations for the bank's internal systems using Oracle 11g and SQL Server 2008. I developed robust backend solutions while gaining experience with Santander's \"Isban\" methodology, focusing on system stability and performance."
+      },
+      "3": {
+        "startMonthDate": "January",
+        "endMonth": "November",
+        "position": "Fullstack .NET Developer",
+        "positionDescription": "I developed and supported client-oriented intranet systems, optimizing solutions with Oracle 11g and SQL Server 2008. I implemented improvements ensuring deliverable quality and meeting objectives by following agile Scrum methodologies."
+      },
+      "4": {
+        "startMonthDate": "January",
+        "endMonth": "April",
+        "position": "Senior Fullstack .NET Developer",
+        "positionDescription": "I was part of a development and maintenance team for academic management systems \"Omega\" using .NET Framework, React, and SQL Server. I designed and implemented complex business logic based on customized client requirements under agile (Scrum) and waterfall methodologies. I enhanced user experience by creating modern and efficient interfaces that optimized the use of academic systems."
+      },
+      "5": {
+        "startMonthDate": "June",
+        "endMonth": "February",
+        "position": "Senior Fullstack .NET Developer",
+        "positionDescription": "I developed and implemented microservices using Domain-Driven Design (DDD) architecture with .NET Core 7, improving system scalability. I worked with SQL, PostgreSQL, and MySQL databases, ensuring optimal performance. I used collaboration tools like Bitbucket and Zoho Projects for project management."
+      },
+      "6": {
+        "startMonthDate": "March",
+        "endMonth": "Present",
+        "position": "Senior Backend .NET Developer",
+        "positionDescription": "As a Senior Backend .NET Developer, I have designed and developed scalable microservices using .NET Framework 4.8, significantly optimizing system performance and improving deployment efficiency through the implementation of CI/CD pipelines. I use advanced tools like Azure Repos for version control and Jira for task management."
+      }
+    },
+    "technologies": {
+      "microservices": "Microservices",
+      "desktop": "Desktop App"
+    }
+  },
+  "theme": {
+    "switch": "Switch theme",
+    "label": "Appearance",
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  },
+  "design": {
+    "profileLabel": "PORTFOLIO / SENIOR FULLSTACK",
+    "heroDescription": "I build digital solutions with .NET and React. From the backend to the details that make an interface easy to use.",
+    "viewProjects": "View projects",
+    "contact": "Get in touch",
+    "builtWith": "Code, care and curiosity.",
+    "aboutTitle": "Solid foundations. Simple experiences.",
+    "aboutIntro": "I care about what makes a great digital experience. And how to build it well.",
+    "aboutParagraph1": "I am a Senior Fullstack Developer with over 10 years of experience. My specialty is the .NET ecosystem: enterprise applications, APIs and microservices that meet real needs.",
+    "aboutParagraph2": "I combine architecture, clean code and SQL database experience to build maintainable solutions. On the frontend, I work with React to bring that technical foundation closer to people.",
+    "aboutParagraph3": "I have worked in banking, education and agile teams. I enjoy learning, solving problems and turning complex requirements into clear, useful products.",
+    "backend": "Robust backends and enterprise applications.",
+    "frontend": "Clear, modern interfaces that are easy to use.",
+    "architecture": "Microservices and code designed to evolve.",
+    "yearsExperience": "years building software solutions",
+    "experienceTitle": "A career in the making.",
+    "experienceIntro": "Teams, industries and challenges that have shaped the way I build software.",
+    "projectsTitle": "Ideas turned into products.",
+    "projectsIntro": "A look at the software I build, from the user experience to the architecture.",
+    "projectCategory": "WEB APPLICATION / PERSONAL FINANCE",
+    "projectSummary": "Your income, expenses and balances in one place. An application to understand your finances and stay in control each month.",
+    "projectDetails": "Explore project details",
+    "resume": "View Resume"
+  }
+}
