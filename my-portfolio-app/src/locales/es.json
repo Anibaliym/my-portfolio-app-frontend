@@ -89,5 +89,8 @@
       "microservices": "Microservicios",
       "desktop": "Aplicación de escritorio"
     }
+  },
+  "theme": {
+    "switch": "Cambiar tema"
   }
 }

@@ -89,5 +89,8 @@
       "microservices": "Microservices",
       "desktop": "Desktop App"
     }
+  },
+  "theme": {
+    "switch": "Switch theme"
   }
 }

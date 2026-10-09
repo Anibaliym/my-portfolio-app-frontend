@@ -1,30 +1,16 @@
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export const MenuBar = ({ activeMenuItem, setActiveMenuItem }) => {
-    const navigate = useNavigate();
+export const MenuBar = () => {
     const { t } = useTranslation();
 
-    const handleMenuClick = (menuItem, navigateTo) => {
-        setActiveMenuItem(menuItem);
-
-        if (navigateTo) 
-            navigate(navigateTo);
-    };
-
     return (
-        <div className="menu">
+        <nav className="menu">
             <ul>
-                <li className={`lead ${activeMenuItem === 'About Me' ? 'active' : ''}`}     onClick={() => handleMenuClick('About Me', '/about')}>
-                    { t('menu.about') }
-                </li>
-                <li className={`lead ${activeMenuItem === 'Experience' ? 'active' : ''}`}   onClick={() => handleMenuClick('Experience', '/experience')}>
-                    { t('menu.experience') }
-                </li>
-                <li className={`lead ${activeMenuItem === 'Projects' ? 'active' : ''}`}     onClick={() => handleMenuClick('Projects', '/proyects')}>
-                    { t('menu.projects') }
-                </li>
-            </ul>  
-        </div>        
-    )
-}
+                <li className="lead"><NavLink to="/about">{t('menu.about')}</NavLink></li>
+                <li className="lead"><NavLink to="/experience">{t('menu.experience')}</NavLink></li>
+                <li className="lead"><NavLink to="/proyects">{t('menu.projects')}</NavLink></li>
+            </ul>
+        </nav>
+    );
+};

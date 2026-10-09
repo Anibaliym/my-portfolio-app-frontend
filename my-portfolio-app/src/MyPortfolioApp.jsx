@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutPage } from './MyPortfolioApp/pages/AboutPage';
 import { ExperiencePage } from './MyPortfolioApp/pages/ExperiencePage';
@@ -10,8 +9,7 @@ import { ToggleTheme } from './MyPortfolioApp/components/toggles/ToggleTheme';
 
 export const MyPortfolioApp = () => {
     const { t } = useTranslation();
-    const [activeMenuItem, setActiveMenuItem] = useState('About Me');
-    
+
     return (
         <div className="principal-container">
             <ToggleLanguage />
@@ -19,7 +17,7 @@ export const MyPortfolioApp = () => {
 
             <div className="left-panel">
                 <div className="">
-                    <h5 className="title display-5">ANIBAL YAÑEZ</h5>
+                    <h1 className="title display-5">ANIBAL YAÑEZ</h1>
                     <p className="lead text-color-default text-color-primary fw-normal">
                         { t('profile.role') }
                     </p>
@@ -28,14 +26,14 @@ export const MyPortfolioApp = () => {
                         { t('profile.description') }
                     </p>
 
-                    <MenuBar activeMenuItem={ activeMenuItem } setActiveMenuItem={ setActiveMenuItem }/>
+                    <MenuBar />
                 </div>
 
                 <div className="social-icons">
-                    <a href="https://www.linkedin.com/in/anibal-ya%C3%B1ez-moraga-568b67113/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/anibal-ya%C3%B1ez-moraga-568b67113/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i className='bx bxl-linkedin-square'></i>
                     </a>
-                    <a href="https://github.com/Anibaliym" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Anibaliym" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i className='bx bxl-github'></i>
                     </a>
                 </div>

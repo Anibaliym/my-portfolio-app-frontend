@@ -3,22 +3,39 @@ import { createContext, useEffect, useState } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [isDarkMode, setTheme] = useState(false);
+    const [ isDarkMode, setTheme ] = useState(() => {
+        try 
+        {
+            return localStorage.getItem('isDarkMode') === 'true';
+        } 
+        catch 
+        {
+            return false;
+        }
+    });
 
     useEffect(() => {
-        const savedTheme = JSON.parse(localStorage.getItem('isDarkMode'));
-        if (savedTheme !== null) {
-            setTheme(savedTheme);
-            document.body.classList.toggle('dark', savedTheme);
-        }
-    }, []);
+        const scheme = isDarkMode ? 'dark' : 'light';
+        const color = isDarkMode ? '#000000' : '#ffffff';
 
-    const toggleTheme = () => {
-        const newTheme = !isDarkMode;
-        setTheme(newTheme);
-        localStorage.setItem('isDarkMode', JSON.stringify(newTheme));
-        document.body.classList.toggle('dark', newTheme);
-    };
+        document.body.classList.toggle('dark', isDarkMode);
+        document.documentElement.style.colorScheme = scheme;
+        document.documentElement.style.backgroundColor = color;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
+        document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', scheme);
+
+        try 
+        {
+            localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+        } 
+        catch 
+        {
+            // Theme switching still works when storage is unavailable.
+        }
+        
+    }, [isDarkMode]);
+
+    const toggleTheme = () => setTheme((currentTheme) => !currentTheme);
 
     return (
         <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
@@ -26,4 +43,3 @@ export const ThemeProvider = ({ children }) => {
         </ThemeContext.Provider>
     );
 };
-

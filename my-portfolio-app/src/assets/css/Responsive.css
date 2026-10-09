@@ -1,119 +1,146 @@
-/* ===== RESPONSIVE DESIGN ===== */
-
-.principal-container, .left-panel, .right-panel, .menu li, .social-icons {
-    transition: var(--tran-05);
-}
-
-@media (max-width: 1350px) {
-    .principal-container {
-        width: 900px;
-    }
-
-    .right-panel {
-        width: 600px;
-    }
-
-    .left-panel {
-        width: 300px;
-        min-width: 250px;
-    }
-
-    .title {
-        font-size: 30px; 
-    }
+/* Fluid desktop layout, with one natural scrolling page on mobile. */
+@media (min-width: 901px) and (max-width: 1250px) {
+    .principal-container { width: calc(100% - 64px); }
+    .title { font-size: clamp(2rem, 3.5vw, 3rem); }
+    .about-container { padding: 48px 32px; }
+    .experience-container, .proyects-container { padding: 32px 24px 80px; }
+    .experience-card, .proyect-card { padding: 20px; }
 }
 
 @media (max-width: 900px) {
-    .principal-container {
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
+    html, body {
+        height: auto;
+        min-height: 100%;
+        overflow: visible;
     }
 
-
-    .right-panel {
+    .principal-container {
+        flex-direction: column;
         width: 100%;
-        height: calc(100vh - 200px); 
-        margin:auto;
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
     }
 
     .left-panel {
+        flex: none;
         width: 100%;
-        height: auto;
-        padding: 20px;
+        padding: 76px 24px 24px;
     }
 
     .title {
-        font-size: 30px; 
-        margin-top:0px; 
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: clamp(2rem, 7vw, 3rem);
+        line-height: 1.15;
     }
 
-    .menu {
-        margin-top: 0px;
-    }
-
-    .menu ul {
-        padding: 0;
-        margin: 0;
-        display: flex;          
-        flex-direction: row;    
-    }
-
-    .menu li {
-        padding: 0px 10px;
-        font-size: 15px;
-    }
-
-    .menu li:hover {
-        background-color: var(--primary-color);
-        color: white;
-    } 
-
-    .about-container {
-        margin-top: 10px; 
-        padding: 0px 20px; 
-        margin-bottom: 150px;
-    }
-
-    .experience-container {
-        margin-top: 0px; 
-        padding: 0px 10px; 
-        margin-bottom: 150px;
-    }
-
-    .proyects-container {
-        margin-top: 0px; 
-        padding: 0px 10px; 
-        margin-bottom: 150px;
-    }
-
-    .proyects-container {
-        margin-top: 0px; 
-        padding: 0px 10px; 
-        margin-bottom: 150px;
-
-    }
-
-    .experience-card {
-        padding: 10px; 
-        margin-top: 0px; 
-    }
-
-    .proyect-card {
-        padding: 10px; 
-    }
-
-    .social-icons {
-        margin-top: 0px;
-        flex-direction: row-reverse;
-    }
-
-    .social-icons a {
-        font-size: 20px;
-    }
-
+    .left-panel .lead { font-size: 1.125rem; }
     .text-description {
+        max-width: 540px;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .menu { margin-top: 0; }
+    .menu ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+    }
+    .menu li { margin: 0; padding: 0; min-width: 0; }
+    .menu a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 10px 6px;
         text-align: center;
-        padding: 0px 20px 0px 20px;
-    }    
+        font-size: 14px;
+        line-height: 1.35;
+        background: var(--body-color);
+        border: 1px solid var(--border-input-text-color);
+        border-radius: 10px;
+        overflow-wrap: anywhere;
+    }
+    .menu a.active, .menu a.active:hover {
+        color: white;
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .social-icons { margin-top: 16px; gap: 12px; }
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        font-size: 30px;
+    }
+
+    .toggle-switch, .toggle-switch-language {
+        position: absolute;
+        top: max(12px, env(safe-area-inset-top));
+    }
+    .toggle-switch { right: 24px; }
+    .toggle-switch-language { right: 80px; }
+
+    .right-panel {
+        flex: none;
+        width: 100%;
+        overflow: visible;
+        border-top: 1px solid var(--border-input-text-color);
+    }
+
+    .about-container, .experience-container, .proyects-container {
+        margin: 0;
+        padding: 28px 24px max(40px, env(safe-area-inset-bottom));
+        font-size: 16px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+    .about-container p { margin-bottom: 24px; }
+    .about-container p:last-child { margin-bottom: 0; }
+    .experience-card, .proyect-card {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+    .experience-card + .experience-card {
+        margin-top: 28px;
+        padding-top: 28px;
+        border-top: 1px solid var(--border-input-text-color);
+    }
+    .experience-row, .experience-row > div { min-width: 0; }
+    .experience-description small { font-size: 15px; }
+    .description-section, .tools-section { font-size: 16px; }
+    .tech-stack { gap: 8px; }
+    .tech-stack span { max-width: 100%; line-height: 1.5; }
+    .primary-button { min-height: 48px; padding: 10px 16px; }
+    .primary-button:hover { transform: none; }
+    .carousel-control-prev, .carousel-control-next { min-width: 44px; }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        padding: 16px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.45);
+        background-size: 65%;
+    }
+}
+
+@media (max-width: 360px) {
+    .left-panel { padding-right: 16px; padding-left: 16px; }
+    .about-container, .experience-container, .proyects-container {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    .menu a { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
