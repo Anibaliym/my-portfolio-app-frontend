@@ -9,7 +9,10 @@
     "projects": "Projects"
   },
   "language": {
-    "switch": "Switch to Spanish"
+    "switch": "Switch to Spanish",
+    "label": "Language",
+    "es": "Spanish",
+    "en": "English"
   },
   "about": {
     "paragraph1": "I am a Senior Fullstack Developer with over 10 years of experience, specialized in software solutions development primarily using <highlight>.NET</highlight> tools and the <highlight>C#</highlight> programming language.",
@@ -44,7 +47,18 @@
     "technicalTitle": "Technical Description:",
     "technicalDescription": "The application is developed using <highlight>React</highlight> for the frontend, providing a modern and dynamic interface, while the backend is implemented with <highlight>.NET Core 8</highlight>, ensuring robust and scalable performance. Data is efficiently stored in a <highlight>PostgreSQL</highlight> database, guaranteeing secure, reliable management and readiness for scaling at any time.",
     "toolsTitle": "Tools and Languages Used:",
-    "explore": "Start Exploring My Account"
+    "explore": "Start Exploring My Account",
+    "gallery": "Mi Cuenta screenshots",
+    "category": "Personal finance · Web application",
+    "demo": "Live demo",
+    "stack": "Tech stack",
+    "overview": "What the application does",
+    "architecture": "How it is built",
+    "features": {
+      "tracking": "Income & expenses",
+      "balances": "Balances & charts",
+      "customization": "Customizable dashboard"
+    }
   },
   "experience": {
     "entries": {
@@ -91,6 +105,34 @@
     }
   },
   "theme": {
-    "switch": "Switch theme"
+    "switch": "Switch theme",
+    "label": "Appearance",
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  },
+  "design": {
+    "profileLabel": "PORTFOLIO / SENIOR FULLSTACK",
+    "heroDescription": "I build digital solutions with .NET and React. From the backend to the details that make an interface easy to use.",
+    "viewProjects": "View projects",
+    "contact": "Get in touch",
+    "builtWith": "Code, care and curiosity.",
+    "aboutTitle": "Solid foundations. Simple experiences.",
+    "aboutIntro": "I care about what makes a great digital experience. And how to build it well.",
+    "aboutParagraph1": "I am a Senior Fullstack Developer with over 10 years of experience. My specialty is the .NET ecosystem: enterprise applications, APIs and microservices that meet real needs.",
+    "aboutParagraph2": "I combine architecture, clean code and SQL database experience to build maintainable solutions. On the frontend, I work with React to bring that technical foundation closer to people.",
+    "aboutParagraph3": "I have worked in banking, education and agile teams. I enjoy learning, solving problems and turning complex requirements into clear, useful products.",
+    "backend": "Robust backends and enterprise applications.",
+    "frontend": "Clear, modern interfaces that are easy to use.",
+    "architecture": "Microservices and code designed to evolve.",
+    "yearsExperience": "years building software solutions",
+    "experienceTitle": "A career in the making.",
+    "experienceIntro": "Teams, industries and challenges that have shaped the way I build software.",
+    "projectsTitle": "Ideas turned into products.",
+    "projectsIntro": "A look at the software I build, from the user experience to the architecture.",
+    "projectCategory": "WEB APPLICATION / PERSONAL FINANCE",
+    "projectSummary": "Your income, expenses and balances in one place. An application to understand your finances and stay in control each month.",
+    "projectDetails": "Explore project details",
+    "resume": "Download Resume"
   }
 }

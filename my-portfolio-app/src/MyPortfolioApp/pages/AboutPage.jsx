@@ -1,21 +1,41 @@
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import { Braces, Layers, Database, Download } from 'lucide-react';
+
+import resumeEs from '../../assets/docs/Anibal Yañez - Esp.docx?url';
+import resumeEn from '../../assets/docs/Anibal Yañez - Eng.docx?url';
 
 export const AboutPage = () => {
-    const { t } = useTranslation();
-
+    const { t, i18n } = useTranslation();
+    const isSpanish = i18n.resolvedLanguage === 'es';
+    const resumeUrl = isSpanish ? resumeEs : resumeEn;
+    const specialties = [
+        { icon: <Database size={22} />, title: '.NET / C#', text: t('design.backend') },
+        { icon: <Braces size={22} />, title: 'React', text: t('design.frontend') },
+        { icon: <Layers size={22} />, title: 'DDD / APIs', text: t('design.architecture') },
+    ];
     return (
-        <div className="about-container text-color-default animate__animated animate__fadeInDown animate__faster">
-            {
-                [1, 2, 3, 4, 5, 6].map((number) => (
-                    <p key={number}>
-                        <Trans
-                            t={ t }
-                            i18nKey={`about.paragraph${number}`}
-                            components={{ highlight: <b className="text-color-primary" /> }}
-                        />
-                    </p>
-                ))
-            }
-        </div>
+        <section className="about-container page-enter">
+            <header className="section-header">
+                <p className="eyebrow">{t('menu.about')}</p>
+                <h2>{t('design.aboutTitle')}</h2>
+                <p className="section-intro">{t('design.aboutIntro')}</p>
+            </header>
+            <div className="about-copy">
+                {[1, 2, 3].map(number => <p key={number}>{t(`design.aboutParagraph${number}`)}</p>)}
+            </div>
+            <div className="specialties">
+                {specialties.map(({icon, title, text}) => (
+                    <article className="specialty" key={title}>
+                        <span className="specialty-icon">{icon}</span>
+                        <h3>{title}</h3><p>{text}</p>
+                    </article>
+                ))}
+            </div>
+            <div className="experience-highlight"><strong>10+</strong><span>{t('design.yearsExperience')}</span></div>
+            <a className="resume-link" href={resumeUrl} download={`Anibal-Yanez-CV-${isSpanish ? 'ES' : 'EN'}.docx`}>
+                {t('design.resume')}<Download size={17} aria-hidden="true" />
+                <span className="resume-format">DOCX</span>
+            </a>
+        </section>
     );
 };

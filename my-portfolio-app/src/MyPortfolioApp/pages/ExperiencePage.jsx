@@ -8,7 +8,13 @@ export const ExperiencePage = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="experience-container">
+        <section className="experience-container page-enter">
+            <header className="section-header">
+                <p className="eyebrow">{t('menu.experience')}</p>
+                <h2>{t('design.experienceTitle')}</h2>
+                <p className="section-intro">{t('design.experienceIntro')}</p>
+            </header>
+            <div className="timeline">
             {
                 sortedExperience.map((experience) => (
                     <CardExperience
@@ -25,6 +31,7 @@ export const ExperiencePage = () => {
                     />
                 ))
             }
-        </div>
+            </div>
+        </section>
     );
 };

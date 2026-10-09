@@ -9,7 +9,10 @@
     "projects": "Proyectos"
   },
   "language": {
-    "switch": "Cambiar a inglés"
+    "switch": "Cambiar a inglés",
+    "label": "Idioma",
+    "es": "Español",
+    "en": "Inglés"
   },
   "about": {
     "paragraph1": "Soy un desarrollador Fullstack Senior con más de 10 años de experiencia, especializado en el desarrollo de soluciones de software utilizando principalmente herramientas microsoft como el entorno <highlight>.NET</highlight>, y lenguaje <highlight>C#</highlight>.",
@@ -44,7 +47,18 @@
     "technicalTitle": "Descripción técnica:",
     "technicalDescription": "La aplicación se desarrolla utilizando <highlight>React</highlight> para el frontend, proporcionando una interfaz moderna y dinámica, mientras que el backend está implementado con <highlight>.NET Core 8</highlight>, asegurando un rendimiento robusto y escalable. Los datos se almacenan eficientemente en una base de datos <highlight>PostgreSQL</highlight>, garantizando un manejo seguro, confiable y preparado para escalar en cualquier momento.",
     "toolsTitle": "Herramientas y lenguajes utilizados:",
-    "explore": "Probar la Aplicación"
+    "explore": "Probar la Aplicación",
+    "gallery": "Capturas de Mi Cuenta",
+    "category": "Finanzas personales · Aplicación web",
+    "demo": "Ver demo",
+    "stack": "Tecnologías",
+    "overview": "Qué hace la aplicación",
+    "architecture": "Cómo está construida",
+    "features": {
+      "tracking": "Ingresos y gastos",
+      "balances": "Balances y gráficos",
+      "customization": "Panel personalizable"
+    }
   },
   "experience": {
     "entries": {
@@ -91,6 +105,34 @@
     }
   },
   "theme": {
-    "switch": "Cambiar tema"
+    "switch": "Cambiar tema",
+    "label": "Apariencia",
+    "light": "Tema claro",
+    "dark": "Tema oscuro",
+    "system": "Tema del sistema"
+  },
+  "design": {
+    "profileLabel": "PORTAFOLIO / FULLSTACK SENIOR",
+    "heroDescription": "Desarrollo soluciones digitales con .NET y React. Del backend a los detalles que hacen una interfaz fácil de usar.",
+    "viewProjects": "Ver proyectos",
+    "contact": "Contactarme",
+    "builtWith": "Código, criterio y curiosidad.",
+    "aboutTitle": "Soluciones sólidas. Experiencias simples.",
+    "aboutIntro": "Me interesa lo que hay detrás de una buena experiencia digital. Y cómo construirlo bien.",
+    "aboutParagraph1": "Soy desarrollador Fullstack Senior con más de 10 años de experiencia. Mi especialidad es el ecosistema .NET: aplicaciones empresariales, APIs y microservicios que responden a necesidades reales.",
+    "aboutParagraph2": "Combino arquitectura, código limpio y experiencia con bases de datos SQL para crear soluciones mantenibles. En el frontend, trabajo con React para acercar esa solidez técnica a las personas.",
+    "aboutParagraph3": "He trabajado en banca, educación y equipos ágiles. Disfruto aprender, resolver problemas y convertir requisitos complejos en productos claros y útiles.",
+    "backend": "Backend robusto y aplicaciones empresariales.",
+    "frontend": "Interfaces claras, modernas y fáciles de usar.",
+    "architecture": "Microservicios y código pensado para evolucionar.",
+    "yearsExperience": "años construyendo soluciones de software",
+    "experienceTitle": "Una trayectoria en construcción.",
+    "experienceIntro": "Experiencia en equipos, industrias y desafíos que han definido mi forma de desarrollar.",
+    "projectsTitle": "Ideas que se vuelven productos.",
+    "projectsIntro": "Una mirada al software que construyo, desde la experiencia de uso hasta su arquitectura.",
+    "projectCategory": "APLICACIÓN WEB / FINANZAS PERSONALES",
+    "projectSummary": "Tus ingresos, gastos y balances en un solo lugar. Una aplicación para entender tus finanzas y llevar el control de cada mes.",
+    "projectDetails": "Explorar los detalles del proyecto",
+    "resume": "Descargar CV"
   }
 }

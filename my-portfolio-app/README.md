@@ -31,3 +31,7 @@ y textos alternativos, pero no el contenido dentro de las imágenes.
 
 Referencias: [hooks de react-i18next](https://react.i18next.com/latest/using-with-hooks)
 y [componente Trans](https://react.i18next.com/latest/trans-component).
+
+### Enlace al CV
+
+Los CV se incluyen desde `src/assets/docs` y se descargan en formato Word (`.docx`). El enlace de “Acerca de mí” selecciona automáticamente la versión española o inglesa según el idioma activo. Vite empaqueta ambos documentos en el build.
