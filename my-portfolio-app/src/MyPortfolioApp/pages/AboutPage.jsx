@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Braces, Layers, Database, Download } from 'lucide-react';
+import { Braces, Layers, Database, ArrowUpRight } from 'lucide-react';
 
 import resumeEs from '../../assets/docs/Anibal Yañez - Esp.docx?url';
 import resumeEn from '../../assets/docs/Anibal Yañez - Eng.docx?url';
@@ -32,8 +32,8 @@ export const AboutPage = () => {
                 ))}
             </div>
             <div className="experience-highlight"><strong>10+</strong><span>{t('design.yearsExperience')}</span></div>
-            <a className="resume-link" href={resumeUrl} download={`Anibal-Yanez-CV-${isSpanish ? 'ES' : 'EN'}.docx`}>
-                {t('design.resume')}<Download size={17} aria-hidden="true" />
+            <a className="resume-link" href={resumeUrl} target="_blank" rel="noopener noreferrer">
+                {t('design.resume')}<ArrowUpRight size={17} aria-hidden="true" />
                 <span className="resume-format">DOCX</span>
             </a>
         </section>

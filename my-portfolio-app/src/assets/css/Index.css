@@ -1,13 +1,13 @@
 :root {
-    --surface: #f8f8fb;
+    --surface: #faf8f3;
     --page-background:
-        radial-gradient(ellipse 900px 650px at 0% 0%, #695cfe1c, transparent 78%),
-        radial-gradient(ellipse 800px 650px at 100% 100%, #9d86ed18, transparent 78%),
-        linear-gradient(135deg, #f8f7fc 0%, #fcfcfe 50%, #f3f0f9 100%);
+        radial-gradient(ellipse 900px 650px at 0% 0%, #a99ac512, transparent 78%),
+        radial-gradient(ellipse 800px 650px at 100% 100%, #c4b49b14, transparent 78%),
+        linear-gradient(135deg, #f8f5ee 0%, #fefdf8 50%, #f5f1e8 100%);
     --card: #ffffff;
     --line: #e2e2eb;
     --accent-soft: #eeebff;
-    --text-color: #5c5d70;
+    --text-color: #454655;
     --text-forte-color: #202033;
     --primary-color: #6250db;
 }
@@ -28,10 +28,13 @@ html, body { width: 100%; min-height: 100%; }
 body {
     background: var(--page-background);
     color: var(--text-color);
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
 }
 body.dark { background: var(--page-background); }
-* { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+* { font-family: var(--font-family); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-family-heading); }
+button, input, select, textarea { font-weight: inherit; }
 a, button, summary { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible, summary:focus-visible {
     outline: 2px solid var(--primary-color);
@@ -74,11 +77,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .menu ul { list-style: none; padding: 0; margin: 0; }
 .menu li { min-width: 0; border-bottom: 1px solid var(--line); }
 .menu a {
-    position: relative; display: flex; align-items: center; gap: 18px;
+    font-family: var(--font-family);
+    position: relative; display: flex; align-items: center;
     min-height: 44px; padding: 10px 4px;
     color: var(--text-color); text-decoration: none;
     font-size: 15px; line-height: 1.4; font-weight: 500; letter-spacing: -0.2px;
-    transition: color 200ms ease;
+    border-radius: 6px 6px 0 0;
+    transition: color 200ms ease, background 200ms ease;
 }
 .menu-label { transition: transform 200ms ease; }
 .menu a::after {
@@ -88,7 +93,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .menu a.active { color: var(--text-forte-color); }
 .menu a.active::after, .menu a:focus-visible::after { transform: scaleX(1); }
-.menu a:focus-visible { outline-offset: 2px; }
+.menu a:focus-visible {
+    outline: none; background: var(--accent-soft); color: var(--primary-color);
+}
+@media (forced-colors: active) {
+    .menu a:focus-visible { outline: 2px solid Highlight; outline-offset: 2px; }
+}
 @media (hover: hover) and (pointer: fine) {
     .menu a:hover { color: var(--primary-color); }
     .menu a:hover .menu-label { transform: translateX(4px); }
@@ -112,8 +122,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .specialty h3 { font-size: 14px; color: var(--text-forte-color); font-weight: 600; }
 .specialty p { font-size: 12px; line-height: 1.65; margin: 10px 0 0; }
 .experience-highlight { display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--line); margin-top: 32px; padding-top: 24px; }
-.experience-highlight strong { font-size: 48px; letter-spacing: -2px; font-weight: 600; color: var(--text-forte-color); }
-.experience-highlight span { max-width: 180px; font-size: 13px; line-height: 1.6; }
+.experience-highlight strong { font-size: 48px; letter-spacing: -2px; font-weight: 500; color: var(--text-forte-color); }
+.experience-highlight span { max-width: 300px; font-size: 14px; line-height: 1.6; }
 .resume-link {
     display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
     margin-top: 20px; color: var(--text-forte-color); font-size: 14px;
@@ -123,23 +133,23 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .resume-format { font-size: 10px; font-weight: 500; color: var(--text-color); letter-spacing: 0.4px; }
 .resume-link:hover { color: var(--primary-color); text-decoration: underline; }
 .timeline { border-left: 1px solid var(--line); margin-left: 5px; }
-.experience-card { position: relative; padding: 0 0 40px 28px; }
+.experience-card { position: relative; isolation: isolate; padding: 0 0 40px 28px; }
 .experience-card::after {
-    content: ''; position: absolute; pointer-events: none;
-    top: 18px; bottom: 28px; left: -1px; width: 2px;
-    background: linear-gradient(to bottom, var(--primary-color), transparent);
-    transform: scaleY(0); transform-origin: top;
-    transition: transform 240ms ease;
+    content: ''; position: absolute; pointer-events: none; z-index: -1;
+    top: -12px; bottom: 28px; left: 14px; right: 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--text-forte-color) 5%, transparent), transparent 90%);
+    opacity: 0; transition: opacity 220ms ease;
 }
 .experience-card::before { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--primary-color); top: 6px; left: -5px; box-shadow: 0 0 0 5px var(--surface); }
 @media (hover: hover) and (pointer: fine) {
-    .experience-card:hover::after { transform: scaleY(1); }
-    .experience-card:hover h3 { color: var(--primary-color); }
+    .experience-card:hover::after { opacity: 1; }
+    .experience-card:hover .experience-description { color: var(--text-forte-color); }
 }
 .experience-date { font-size: 11px; margin-bottom: 12px; letter-spacing: 0.5px; }
 .experience-card h3 { transition: color 200ms ease; font-size: 22px; font-weight: 600; color: var(--text-forte-color); margin-bottom: 8px; }
 .experience-position { font-size: 14px; color: var(--primary-color); margin-bottom: 16px; }
-.experience-description { font-size: 14px; line-height: 1.85; margin-bottom: 20px; }
+.experience-description { transition: color 220ms ease; font-size: 14px; line-height: 1.85; margin-bottom: 20px; }
 .tech-stack { display: flex; flex-wrap: wrap; gap: 7px; }
 .tech-stack span { background: var(--accent-soft); color: var(--primary-color); border-radius: 6px; padding: 5px 9px; font-size: 11px; font-weight: 500; max-width: 100%; }
 .project-showcase { min-width: 0; }
@@ -207,21 +217,23 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .appearance-option {
     position: relative; display: inline-flex; align-items: center; justify-content: center;
-    width: 28px; height: 28px; flex-shrink: 0; padding: 0; border: 0; border-radius: 50%;
+    width: 30px; height: 26px; flex-shrink: 0; padding: 0; border: 0; border-radius: 999px;
     background: transparent; color: var(--text-color); cursor: pointer;
     font-size: 10px; font-weight: 500; letter-spacing: 0;
     transition: color 180ms ease;
 }
 .appearance-option::before {
     content: ''; position: absolute; z-index: -1;
-    width: 26px; height: 26px; border-radius: 50%;
+    width: 28px; height: 22px; border-radius: 999px;
     transition: background 180ms ease, box-shadow 180ms ease;
 }
-.appearance-option[aria-pressed="true"] { color: #fff; font-weight: 700; }
+.appearance-option[aria-pressed="true"] { color: var(--surface); font-weight: 700; }
 .appearance-option[aria-pressed="true"]::before {
-    background: #695cfe; box-shadow: 0 0 0 1px #695cfe, 0 2px 5px #695cfe33;
+    background: #70707c; box-shadow: 0 1px 3px #00000014;
 }
-.appearance-option:focus-visible { outline-offset: 1px; }
+body.dark .appearance-option[aria-pressed="true"]::before { background: #b9b9c4; }
+body.dark .appearance-option:focus-visible { outline-color: #b9b9c4; }
+.appearance-option:focus-visible { outline: 2px solid #70707c; outline-offset: 1px; }
 @media (hover: hover) and (pointer: fine) {
     .appearance-option:not([aria-pressed="true"]):hover { color: var(--text-forte-color); }
     .appearance-option:not([aria-pressed="true"]):hover::before { background: var(--surface); }
@@ -229,8 +241,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 @media (pointer: coarse) {
     .appearance-option { width: 44px; height: 44px; }
     .appearance-selector { gap: 0; padding: 0; }
-    .appearance-selector::before { top: 6px; bottom: 6px; }
-    .appearance-option::before { width: 28px; height: 28px; }
+    .appearance-selector::before { top: 8px; bottom: 8px; }
+    .appearance-option::before { width: 32px; height: 22px; }
 }
 .page-enter { animation: page-enter 300ms ease-out; }
 @keyframes page-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

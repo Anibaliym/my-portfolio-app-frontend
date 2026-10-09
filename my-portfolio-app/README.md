@@ -34,4 +34,4 @@ y [componente Trans](https://react.i18next.com/latest/trans-component).
 
 ### Enlace al CV
 
-Los CV se incluyen desde `src/assets/docs` y se descargan en formato Word (`.docx`). El enlace de “Acerca de mí” selecciona automáticamente la versión española o inglesa según el idioma activo. Vite empaqueta ambos documentos en el build.
+Los CV se incluyen desde `src/assets/docs` y están en formato Word (`.docx`). El enlace solicita abrir el documento en una pestaña nueva; el navegador puede descargarlo si no admite visualizar Word. El enlace de “Acerca de mí” selecciona automáticamente la versión española o inglesa según el idioma activo. Vite empaqueta ambos documentos en el build.
