@@ -12,7 +12,6 @@ export const ExperiencePage = () => {
             <header className="section-header">
                 <p className="eyebrow">{t('menu.experience')}</p>
                 <h2>{t('design.experienceTitle')}</h2>
-                <p className="section-intro">{t('design.experienceIntro')}</p>
             </header>
             <div className="timeline">
             {

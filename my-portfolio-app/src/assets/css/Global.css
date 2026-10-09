@@ -14,10 +14,10 @@
     --body-color: #fff;
     --placeholder-color: #c0c0c0; 
     --sidebar-color: #F3F3F0;
-    --primary-color: #695CFE; /* Purple */
+    --primary-color: #80601c;
     --secondary-color: #FF7F11; /* Naranja Vibrante - Un naranja fuerte y llamativo. */
     --danger-color: red;
-    --primary-color-light: #F6F5FF;
+    --primary-color-light: #f0e9d8;
     --toggle-color: #DDD;
     --text-color: #707070;
     --text-forte-color: black; 
@@ -39,7 +39,7 @@ body.dark {
     --placeholder-color: #8e8e8e; 
     --body-color: #0c0c0c;
     --sidebar-color: #171717;
-    --primary-color: #695CFE; /* Purple */
+    --primary-color: #d5b66e;
 
     --danger-color: red;
     --secondary-color: #FF7F11;
@@ -57,7 +57,7 @@ body.dark {
 
 ::selection {
     background-color: var(--primary-color); /* Color de fondo de la selección */
-    color: white; /* Color del texto seleccionado */
+    color: var(--surface); /* Color del texto seleccionado */
 }
 
 .text-color-forte {
