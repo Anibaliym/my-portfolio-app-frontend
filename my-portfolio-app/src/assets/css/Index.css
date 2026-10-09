@@ -184,6 +184,9 @@ body.dark .switch::before {
 /* Switch language - Inicio **************************************************************************************/
 
 .toggle-switch-language {
+    border: 0;
+    padding: 0;
+    font: inherit;
     display: flex;
     align-items: center;
     cursor: pointer;

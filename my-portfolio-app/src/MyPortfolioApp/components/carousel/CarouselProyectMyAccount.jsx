@@ -20,32 +20,34 @@ import HomePageDark from '../../../assets/images/proyect-mi-account-darkmode/Hom
 import AccountsPageDark from '../../../assets/images/proyect-mi-account-darkmode/AccountsPage.png';
 import DeleteUserAccountModalDark from '../../../assets/images/proyect-mi-account-darkmode/DeleteUserAccountModal.png';
 import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const CarouselProyectMyAccount = () => {
+    const { t } = useTranslation();
     const {isDarkMode} = useContext(ThemeContext);
 
     const images = isDarkMode
         ? [
-            { src: LoginPageDark, desc: 'Acceso' },
-            { src: RegisterPageDark, desc: 'Registro' },
-            { src: HomePageDark, desc: 'Inicio de la aplicación' },
-            { src: ProfilePageDark, desc: 'Perfil de usuario' },
-            { src: AccountsPageDark, desc: 'Cuentas' },
-            { src: SheetPageDark, desc: 'Hojas de cálculo' },
-            { src: SessionExpiredDark, desc: 'Sesión expirada' },
-            { src: DeleteUserAccountModalDark, desc: 'Eliminación de usuario' },
-            { src: ProfilePageDeleteAccountDark, desc: 'Usuario eliminado' }
+            { src: LoginPageDark },
+            { src: RegisterPageDark },
+            { src: HomePageDark },
+            { src: ProfilePageDark },
+            { src: AccountsPageDark },
+            { src: SheetPageDark },
+            { src: SessionExpiredDark },
+            { src: DeleteUserAccountModalDark },
+            { src: ProfilePageDeleteAccountDark }
         ]
         : [
-            { src: LoginPageLight, desc: 'Acceso' },
-            { src: RegisterPageLight, desc: 'Registro' },
-            { src: HomePageLight, desc: 'Inicio de la aplicación' },
-            { src: ProfilePageLight, desc: 'Perfil de usuario' },
-            { src: AccountsPageLight, desc: 'Cuentas' },
-            { src: SheetPageLight, desc: 'Hojas de cálculo' },
-            { src: SessionExpiredLight, desc: 'Sesión expirada' },
-            { src: DeleteUserAccountModalLight, desc: 'Eliminación de usuario' },
-            { src: ProfilePageDeleteAccountLight, desc: 'Usuario eliminado' }
+            { src: LoginPageLight },
+            { src: RegisterPageLight },
+            { src: HomePageLight },
+            { src: ProfilePageLight },
+            { src: AccountsPageLight },
+            { src: SheetPageLight },
+            { src: SessionExpiredLight },
+            { src: DeleteUserAccountModalLight },
+            { src: ProfilePageDeleteAccountLight }
         ];
 
     return (
@@ -58,7 +60,7 @@ export const CarouselProyectMyAccount = () => {
             <div className="carousel-inner rounded-3">
                 {images.map((image, index) => (
                     <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <img src={image.src} className="d-block w-100 rounded-3" alt={image.desc} />
+                        <img src={image.src} className="d-block w-100 rounded-3" alt={t(`carousel.slides.${index}`)} />
                         
                         {/* Descripción en la esquina inferior derecha */}
                         <div 
@@ -73,7 +75,7 @@ export const CarouselProyectMyAccount = () => {
                                 color: 'white'
                             }}
                         >
-                            <h6 style={{ margin: 0, fontSize: '0.9rem' }}>{image.desc}</h6>
+                            <h6 style={{ margin: 0, fontSize: '0.9rem' }}>{t(`carousel.slides.${index}`)}</h6>
                         </div>
                     </div>
                 ))}
@@ -81,12 +83,12 @@ export const CarouselProyectMyAccount = () => {
             
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
+                <span className="visually-hidden">{ t('carousel.previous') }</span>
             </button>
             
             <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
+                <span className="visually-hidden">{ t('carousel.next') }</span>
             </button>
         </div>
     );

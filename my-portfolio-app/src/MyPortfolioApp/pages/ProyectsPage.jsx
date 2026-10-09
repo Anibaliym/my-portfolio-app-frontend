@@ -1,82 +1,28 @@
-import { useContext } from 'react';
-import { LanguageContext } from '../../assets/context/LanguageProvider';
+import { Trans, useTranslation } from 'react-i18next';
 import { CarouselProyectMyAccount } from '../components/carousel/CarouselProyectMyAccount';
 
-const myAccountUrl = import.meta.env.VITE_URL_MY_ACCOUNT; 
+const myAccountUrl = import.meta.env.VITE_URL_MY_ACCOUNT;
 
 export const ProyectsPage = () => {
+    const { t } = useTranslation();
 
-    const {language} = useContext(LanguageContext);
-    
     return (
-        <div className="proyects-container"> 
+        <div className="proyects-container">
             <div className="proyect-card animate__animated animate__fadeInDown animate__faster">
-                <h6 className="display-6 fs-1 text-color-primary mb-3">
-                    { (language === 'es' ? 'MI CUENTA' : 'MY ACCOUNT') }
-                </h6>
-
-                <small className="lead fw-normal text-color-forte fs-6">
-                    { (language === 'es' ? 'Descripción funcional:' : 'Functional Description:') }
-                </small>
+                <h6 className="display-6 fs-1 text-color-primary mb-3">{ t('projects.title') }</h6>
+                <small className="lead fw-normal text-color-forte fs-6">{ t('projects.functionalTitle') }</small>
+                <div className="description-section text-color-default">
+                    <p>{ t('projects.functionalDescription') }</p>
+                </div>
+                <small className="lead fw-normal text-color-forte fs-6">{ t('projects.technicalTitle') }</small>
                 <div className="description-section text-color-default">
                     <p>
-                        { 
-                            (language === 'es')
-                                ? 'La aplicación Mi Cuenta es una plataforma intuitiva diseñada para simplificar la gestión y supervisión de las finanzas personales de manera clara y eficiente. Proporciona un control detallado de ingresos, gastos y balances mensuales y anuales, permitiendo a los usuarios llevar un seguimiento preciso de su situación financiera. La aplicación ofrece un panel de visualización dinámico con gráficos interactivos y opciones de personalización adaptables a las necesidades específicas de cada usuario.' 
-                                : 'My Account App is an intuitive platform designed to simplify the management and supervision of personal finances in a clear and efficient way. It provides detailed control of income, expenses, and monthly and annual balances, allowing users to keep precise track of their financial situation. The application offers a dynamic dashboard with interactive charts and customization options tailored to each user’s specific needs.' 
-                        }
+                        <Trans t={t} i18nKey="projects.technicalDescription"
+                            components={{ highlight: <b className="text-color-primary" /> }} />
                     </p>
                 </div>
-
-                <small className="lead fw-normal text-color-forte  fs-6">
-                    {
-                        (language === 'es')
-                            ? 'Descripción Técnica:'
-                            : 'Overview:'
-                    }
-                    
-                </small>
-                <div className="description-section text-color-default">
-                    <p>
-                        {
-                            (language === 'es')
-                                ? 'La aplicación se desarrolla utilizando'
-                                : 'The application is developed using '
-                        }
-
-                        <b><span className="text-color-primary"> React</span></b>
-                        {
-                            (language === 'es')
-                                ? ' para el frontend, proporcionando una interfaz moderna y dinámica, mientras que el backend está implementado con '
-                                : ' for the frontend, providing a modern and dynamic interface, while the backend is implemented to ensure robust and scalable performance. '
-                        }
-                        
-                        {
-                            (language === 'es')
-                                ? ' asegurando un rendimiento robusto y escalable. Los datos se almacenan eficientemente en una base de datos '
-                                : ' ensuring robust and scalable performance. The data is efficiently stored in a '
-                        }
-                        
-
-                        <b><span className="text-color-primary"> .NET Core 8,  PostgreSQL, </span></b>
-
-                        {
-                            (language === 'es')
-                                ? ' garantizando un manejo seguro, confiable y preparado para escalar en cualquier momento.'
-                                : ' guaranteeing secure, reliable management and readiness for scaling at any time.'
-                        }
-                    </p>
-                </div>
-
                 <div className="tools-section mb-3">
-                    <small className="lead fw-normal text-color-forte  fs-6">
-                        {
-                            (language === 'es')
-                                ? 'Herramientas y lenguajes utilizados:'
-                                : 'Tools and Languages Used:'
-                        }
-                        
-                    </small>
+                    <small className="lead fw-normal text-color-forte fs-6">{ t('projects.toolsTitle') }</small>
                     <div  className="tech-stack mt-3">
                         <span>React</span>
                         <span>JavaScript</span>
@@ -93,19 +39,12 @@ export const ProyectsPage = () => {
 
                 <div className="container">
                     <div className="row mt-3">
-                        <button 
-                            className="primary-button"
-                            onClick={() => window.location.href = myAccountUrl}
-                        >
-                            {
-                                (language === 'es')
-                                    ? 'Probar la Aplicación'
-                                    : 'Start Exploring My Account'
-                            }                            
+                        <button className="primary-button" onClick={() => window.location.href = myAccountUrl}>
+                            { t('projects.explore') }
                         </button>
                     </div>
                 </div>
-           </div>
+            </div>
         </div>
-    )
-}
+    );
+};

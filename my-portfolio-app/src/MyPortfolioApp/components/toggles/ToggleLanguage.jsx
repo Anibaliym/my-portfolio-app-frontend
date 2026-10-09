@@ -1,18 +1,18 @@
-import React, { useContext, useEffect } from 'react'
-import { LanguageContext } from '../../../assets/context/LanguageProvider';
+import { useTranslation } from 'react-i18next';
 
 export const ToggleLanguage = () => {
-    const { language, toggleLanguage } = useContext(LanguageContext);
-
-    useEffect(() => {
-        document.body.classList.toggle('language-en', language === 'en');
-        document.body.classList.toggle('language-es', language === 'es');
-    }, [language]);
+    const { t, i18n } = useTranslation();
+    const language = i18n.resolvedLanguage;
 
     return (
-        <div className="toggle-switch-language" onClick={toggleLanguage}>
-            <span className="language-text">{language === 'es' ? 'ES' : 'EN'}</span>
-            <span className={`switch-language ${language === 'en' ? 'active' : ''}`}></span>
-        </div>
+        <button
+            type="button"
+            className="toggle-switch-language"
+            aria-label={t('language.switch')}
+            onClick={() => i18n.changeLanguage(language === 'es' ? 'en' : 'es')}
+        >
+            <span className="language-text">{language.toUpperCase()}</span>
+            <span className={`switch-language ${language === 'en' ? 'active' : ''}`} aria-hidden="true"></span>
+        </button>
     );
 };

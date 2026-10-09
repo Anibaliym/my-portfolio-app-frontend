@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AboutPage } from './MyPortfolioApp/pages/AboutPage';
 import { ExperiencePage } from './MyPortfolioApp/pages/ExperiencePage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MenuBar } from './MyPortfolioApp/components/ui/MenuBar';
 import { ProyectsPage } from './MyPortfolioApp/pages/ProyectsPage';
-import { LanguageContext } from './assets/context/LanguageProvider';
 import { ToggleLanguage } from './MyPortfolioApp/components/toggles/ToggleLanguage';
 import { ToggleTheme } from './MyPortfolioApp/components/toggles/ToggleTheme';
 
 export const MyPortfolioApp = () => {
-    const {language} = useContext(LanguageContext);
+    const { t } = useTranslation();
     const [activeMenuItem, setActiveMenuItem] = useState('About Me');
     
     return (
@@ -21,17 +21,11 @@ export const MyPortfolioApp = () => {
                 <div className="">
                     <h5 className="title display-5">ANIBAL YAÑEZ</h5>
                     <p className="lead text-color-default text-color-primary fw-normal">
-                        { (language === 'es') ? 'Desarrollador Fullstack' : 'Fullstack Developer'}
-                        
+                        { t('profile.role') }
                     </p>
-
                     
                     <p className="text-color-default text-description">
-                        {
-                            (language === 'es')
-                            ? 'Creo experiencias digitales innovadoras y eficientes con tecnologías .NET y Frontend modernas.'
-                            : 'I create innovative and efficient digital experiences using modern .NET and Frontend technologies.'
-                        }
+                        { t('profile.description') }
                     </p>
 
                     <MenuBar activeMenuItem={ activeMenuItem } setActiveMenuItem={ setActiveMenuItem }/>

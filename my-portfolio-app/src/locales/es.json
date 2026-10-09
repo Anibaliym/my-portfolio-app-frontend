@@ -1,0 +1,93 @@
+{
+  "profile": {
+    "role": "Desarrollador Fullstack",
+    "description": "Creo experiencias digitales innovadoras y eficientes con tecnologías .NET y Frontend modernas."
+  },
+  "menu": {
+    "about": "Acerca de mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos"
+  },
+  "language": {
+    "switch": "Cambiar a inglés"
+  },
+  "about": {
+    "paragraph1": "Soy un desarrollador Fullstack Senior con más de 10 años de experiencia, especializado en el desarrollo de soluciones de software utilizando principalmente herramientas microsoft como el entorno <highlight>.NET</highlight>, y lenguaje <highlight>C#</highlight>.",
+    "paragraph2": "Mi trayectoria profesional incluye el diseño, desarrollo e implementación de aplicaciones y microservicios escalables y de alta calidad, aplicando arquitecturas avanzadas como Domain-Driven Design (DDD) y principios de código limpio.",
+    "paragraph3": "Mi mayor fortaleza reside en el ecosistema .NET, donde he trabajado extensamente en el desarrollo de APIs robustas, aplicaciones empresariales y sistemas orientados al cliente. Además, tengo experiencia optimizando el rendimiento de bases de datos SQL, PostgreSQL, MySQL y Oracle.",
+    "paragraph4": "Además, tengo un gran interés por el desarrollo Front-End utilizando herramientas como la librería <highlight>React</highlight>, enfocado en ofrecer experiencias de usuario sobresalientes mediante la creación de interfaces modernas, atractivas y de fácil uso que combinan diseño limpio con funcionalidades robustas.",
+    "paragraph5": "He colaborado en equipos ágiles bajo metodologías <highlight>Scrum</highlight>, gestionando tareas con herramientas como Jira y utilizando sistemas de control de versiones como Azure Repos y plataformas basadas en la herramienta <highlight>GIT</highlight>.",
+    "paragraph6": "Me apasiona aprender nuevas tecnologías y aplicar ese conocimiento para crear soluciones innovadoras que cumplan con altos estándares de calidad y usabilidad."
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "carousel": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "slides": [
+      "Acceso",
+      "Registro",
+      "Inicio de la aplicación",
+      "Perfil de usuario",
+      "Cuentas",
+      "Hojas de cálculo",
+      "Sesión expirada",
+      "Eliminación de usuario",
+      "Usuario eliminado"
+    ]
+  },
+  "projects": {
+    "title": "MI CUENTA",
+    "functionalTitle": "Descripción funcional:",
+    "functionalDescription": "La aplicación Mi Cuenta es una plataforma intuitiva diseñada para simplificar la gestión y supervisión de las finanzas personales de manera clara y eficiente. Proporciona un control detallado de ingresos, gastos y balances mensuales y anuales, permitiendo a los usuarios llevar un seguimiento preciso de su situación financiera. La aplicación ofrece un panel de visualización dinámico con gráficos interactivos y opciones de personalización adaptables a las necesidades específicas de cada usuario.",
+    "technicalTitle": "Descripción técnica:",
+    "technicalDescription": "La aplicación se desarrolla utilizando <highlight>React</highlight> para el frontend, proporcionando una interfaz moderna y dinámica, mientras que el backend está implementado con <highlight>.NET Core 8</highlight>, asegurando un rendimiento robusto y escalable. Los datos se almacenan eficientemente en una base de datos <highlight>PostgreSQL</highlight>, garantizando un manejo seguro, confiable y preparado para escalar en cualquier momento.",
+    "toolsTitle": "Herramientas y lenguajes utilizados:",
+    "explore": "Probar la Aplicación"
+  },
+  "experience": {
+    "entries": {
+      "1": {
+        "startMonthDate": "",
+        "endMonth": "",
+        "position": "Desarrollador .NET",
+        "positionDescription": "Conformé parte de un equipo de soporte y desarrollo de una aplicación para el negocio de \"Factoring y Confirming\", realizando la toma de requerimientos y adaptación de soluciones a necesidades específicas del cliente en Bogotá, Colombia. Mi trabajo destacó por la implementación eficiente de integraciones que optimizaron los procesos internos del banco."
+      },
+      "2": {
+        "startMonthDate": "Agosto",
+        "endMonth": "Diciembre",
+        "position": "Desarrollador .NET",
+        "positionDescription": "Implementé integraciones para sistemas internos del banco utilizando Oracle 11g y SQL Server 2008. Desarrollé soluciones backend robustas mientras adquiría experiencia en la metodología \"Isban\" de Santander, enfocándome en la estabilidad y rendimiento del sistema."
+      },
+      "3": {
+        "startMonthDate": "Enero",
+        "endMonth": "Noviembre",
+        "position": "Desarrollador Fullstack .NET",
+        "positionDescription": "Desarrollé y soporté sistemas intranet orientados al cliente, optimizando soluciones con Oracle 11g y SQL Server 2008. Implementé mejoras que aseguraron la calidad de entregables y cumplimiento de objetivos siguiendo metodologías ágiles Scrum."
+      },
+      "4": {
+        "startMonthDate": "Enero",
+        "endMonth": "Abril",
+        "position": "Desarrollador Fullstack .NET Senior",
+        "positionDescription": "Conformé parte del equipo de desarrollo y mantenimiento de sistemas de gestión académica \"Omega\" con .NET Framework, React y SQL Server. Diseñé e implementé lógica de negocio compleja basada en requerimientos personalizados del cliente, bajo metodologías ágiles (Scrum) y en cascada. Mejoré la experiencia de usuario creando interfaces modernas y eficientes que optimizaron el uso de los sistemas académicos."
+      },
+      "5": {
+        "startMonthDate": "Junio",
+        "endMonth": "Febrero",
+        "position": "Desarrollador Fullstack .NET Senior",
+        "positionDescription": "Desarrollé e implementé microservicios bajo la arquitectura Domain-Driven Design (DDD) utilizando .NET Core 7, logrando mejorar la escalabilidad del sistema. Trabajé con bases de datos SQL, PostgreSQL y MySQL, asegurando un rendimiento óptimo. Utilicé herramientas de colaboración como Bitbucket y Zoho Projects para gestión de proyectos."
+      },
+      "6": {
+        "startMonthDate": "Marzo",
+        "endMonth": "Presente",
+        "position": "Desarrollador Backend .NET Senior",
+        "positionDescription": "En mi rol como Desarrollador Backend .NET Senior, he diseñado y desarrollado microservicios escalables utilizando .NET Framework 4.8, optimizando significativamente el rendimiento del sistema y mejorando la eficiencia de despliegue mediante la implementación de pipelines CI/CD. Uso de herramientas avanzadas como Azure Repos y Gitlab para control de versiones y Jira para la gestión de tareas."
+      }
+    },
+    "technologies": {
+      "microservices": "Microservicios",
+      "desktop": "Aplicación de escritorio"
+    }
+  }
+}

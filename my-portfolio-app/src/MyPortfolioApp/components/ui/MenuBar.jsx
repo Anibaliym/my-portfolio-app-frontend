@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { LanguageContext } from '../../../assets/context/LanguageProvider';
-import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const MenuBar = ({ activeMenuItem, setActiveMenuItem }) => {
     const navigate = useNavigate();
-    const {language} = useContext(LanguageContext);
+    const { t } = useTranslation();
 
     const handleMenuClick = (menuItem, navigateTo) => {
         setActiveMenuItem(menuItem);
@@ -17,13 +16,13 @@ export const MenuBar = ({ activeMenuItem, setActiveMenuItem }) => {
         <div className="menu">
             <ul>
                 <li className={`lead ${activeMenuItem === 'About Me' ? 'active' : ''}`}     onClick={() => handleMenuClick('About Me', '/about')}>
-                    { (language === 'es') ? 'Acerca de mi' : 'About Me' }
+                    { t('menu.about') }
                 </li>
                 <li className={`lead ${activeMenuItem === 'Experience' ? 'active' : ''}`}   onClick={() => handleMenuClick('Experience', '/experience')}>
-                    { (language === 'es') ? 'Experiencia' : 'Experience' }
+                    { t('menu.experience') }
                 </li>
                 <li className={`lead ${activeMenuItem === 'Projects' ? 'active' : ''}`}     onClick={() => handleMenuClick('Projects', '/proyects')}>
-                    { (language === 'es') ? 'Proyectos' : 'Projects' }
+                    { t('menu.projects') }
                 </li>
             </ul>  
         </div>        
